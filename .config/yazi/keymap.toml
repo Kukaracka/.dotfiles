@@ -1,0 +1,66 @@
+#----------CONFIGS-----------------
+
+[[mgr.prepend_keymap]]
+on = [ "g", "c", "y" ]
+run = "cd ~/.config/yazi"
+desc = "cd ~/.config/yazi"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "c", "h" ]
+run = "cd ~/.config/hypr"
+desc = "cd ~/.config/hypr"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "c", "f"]
+run = "cd ~/.config/fish"
+desc = "cd ~/.config/fish"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "c", "k"]
+run = "cd /etc/keyd"
+desc = "cd /etc/keyd"
+
+#-----------DIRECTORIES-------------
+
+[[mgr.prepend_keymap]]
+on = [ "g", "d", "w" ]
+run = "cd ~/Downloads"
+desc = "cd ~/Downloads"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "d", "d" ]
+run = "cd ~/Documents"
+desc = "cd ~/Documents"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "d", "r" ]
+run = "cd ~/Pictures"
+desc = "cd ~/Pictures"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "d", "v" ]
+run = "cd ~/Videos"
+desc = "cd ~/Videos"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "d", "c" ]
+run = "cd ~/.config"
+desc = "cd ~/.config"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "d", "t"]
+run = "cd ~/.local/share/Trash/files"
+desc = "cd ~/.local/share/Trash/file"
+
+#-------------PROJECTS-------------
+
+[[mgr.prepend_keymap]]
+on = [ "g", "p", "d"]
+run = "cd ~/Projects/DigitalPassport"
+desc = "cd ~/Projects/DigitalPassport"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "p", "s"]
+run = "cd ~/Projects/SlillTracker"
+desc = "cd ~/Projects/SlillTracker"
+

@@ -1,0 +1,23 @@
+[manager]
+ratio          = [ 1, 4, 3 ] # Ширина колонок: дерево, список, превью
+sort_by        = "alphabetical"
+sort_sensitive = false
+sort_reverse   = false
+sort_dir_first = true
+show_hidden    = true  # Всегда показывать скрытые файлы
+show_symlink   = true
+
+[preview]
+tab_size        = 2
+max_width       = 1000
+max_height      = 1000
+cache_dir       = ""
+
+[opener]
+# Чем открывать файлы (настрой под свой софт)
+edit = [
+    { run = 'nvim "$@"', block = true, desc = "NeoVim" },
+]
+play = [
+    { run = 'vlc "$@"', orphan = true, desc = "VLC" },
+]
