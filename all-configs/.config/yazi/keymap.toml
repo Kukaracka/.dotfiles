@@ -1,24 +1,34 @@
 #----------CONFIGS-----------------
 
-[[mgr.prepend_keymap]]
-on = [ "g", "c", "y" ]
-run = "cd ~/.config/yazi"
-desc = "cd ~/.config/yazi"
+# [[mgr.prepend_keymap]]
+# on = [ "g", "c", "y" ]
+# run = "cd ~/.config/yazi"
+# desc = "cd ~/.config/yazi"
+#
+# [[mgr.prepend_keymap]]
+# on = [ "g", "c", "h" ]
+# run = "cd ~/.config/hypr"
+# desc = "cd ~/.config/hypr"
+#
+# [[mgr.prepend_keymap]]
+# on = [ "g", "c", "f"]
+# run = "cd ~/.config/fish"
+# desc = "cd ~/.config/fish"
+#
+# [[mgr.prepend_keymap]]
+# on = [ "g", "c", "k"]
+# run = "cd /etc/keyd"
+# desc = "cd /etc/keyd"
 
 [[mgr.prepend_keymap]]
-on = [ "g", "c", "h" ]
-run = "cd ~/.config/hypr"
-desc = "cd ~/.config/hypr"
+on = [ "g", "p"]
+run = "cd ~/Projects"
+desc = "Go to project directory"
 
 [[mgr.prepend_keymap]]
-on = [ "g", "c", "f"]
-run = "cd ~/.config/fish"
-desc = "cd ~/.config/fish"
-
-[[mgr.prepend_keymap]]
-on = [ "g", "c", "k"]
-run = "cd /etc/keyd"
-desc = "cd /etc/keyd"
+on = [ "g", "c"]
+run = "cd ~/.dotfiles/all-configs/.config"
+desc = "Go to dotfiles directory"
 
 #-----------DIRECTORIES-------------
 
@@ -53,14 +63,4 @@ run = "cd ~/.local/share/Trash/files"
 desc = "cd ~/.local/share/Trash/file"
 
 #-------------PROJECTS-------------
-
-[[mgr.prepend_keymap]]
-on = [ "g", "p", "d"]
-run = "cd ~/Projects/DigitalPassport"
-desc = "cd ~/Projects/DigitalPassport"
-
-[[mgr.prepend_keymap]]
-on = [ "g", "p", "s"]
-run = "cd ~/Projects/SlillTracker"
-desc = "cd ~/Projects/SlillTracker"
 

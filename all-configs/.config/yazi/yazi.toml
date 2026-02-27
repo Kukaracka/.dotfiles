@@ -1,5 +1,5 @@
-[manager]
-ratio          = [ 1, 4, 3 ] # Ширина колонок: дерево, список, превью
+[mgr]
+ratio          = [ 20, 50, 30 ] # Ширина колонок: дерево, список, превью
 sort_by        = "alphabetical"
 sort_sensitive = false
 sort_reverse   = false
@@ -19,5 +19,40 @@ edit = [
     { run = 'nvim "$@"', block = true, desc = "NeoVim" },
 ]
 play = [
+    { run = 'mpv "$@"', orphan = true, desc = "MPV" },
+]
+
+copy = [
+
+    { run = 'wl-copy < "$@"', orphan = true, desc = "Clipboard" },
+]
+
+play_vlc = [
     { run = 'vlc "$@"', orphan = true, desc = "VLC" },
+]
+
+open_img = [
+    { run = 'gwenview "$@"', orphan = true, desc = "VLC" },
+]
+[open]
+rules = [
+	# Folder
+	{ url = "*/", use = [ "edit", "open", "reveal", "copy"] },
+	# Text
+	{ mime = "text/*", use = [ "edit", "reveal", "copy" ] },
+	# Image
+	{ mime = "image/*", use = ["open_img" , "open", "reveal" , "copy"] },
+	# Media
+	{ mime = "{audio,video}/*", use = [ "play", "play_vlc", "reveal" , "copy"] },
+	# Archive
+	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract", "reveal" ] },
+	# JSON
+	{ mime = "application/{json,ndjson}", use = [ "edit", "reveal" , "copy"] },
+	{ mime = "*/javascript", use = [ "edit", "reveal" , "copy"] },
+	# Empty file
+	{ mime = "inode/empty", use = [ "edit", "reveal" , "copy"] },
+	# Virtual file system
+	{ mime = "vfs/{absent,stale}", use = "download", "copy" },
+	# Fallback
+	{ url = "*", use = [ "open", "reveal", "copy" ] },
 ]
