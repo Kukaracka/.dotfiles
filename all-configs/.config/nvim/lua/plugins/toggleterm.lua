@@ -8,7 +8,7 @@ return {
     hide_numbers = true,
     shade_terminals = true,
     shading_factor = 2,
-    start_in_insert = true,
+    start_in_insert = false,
     persist_size = true,
     direction = "float",
     close_on_exit = true,
