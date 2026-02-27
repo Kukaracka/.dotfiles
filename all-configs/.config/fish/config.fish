@@ -1,19 +1,19 @@
-function fish_prompt -d "Write out the prompt"
-    # Минималистичный prompt: user@host ~/path >
-    printf '%s@%s %s%s%s > ' \
-        $USER $hostname \
-        (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
-end
+# function fish_prompt -d "Write out the prompt"
+#     # Минималистичный prompt: user@host ~/path >
+#     printf '%s@%s %s%s%s > ' \
+#         $USER $hostname \
+#         (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
+# end
 
-
-# fish_config theme choose "Catppuccin Mocha"
+# Это переменная окружения для работы snap
+# echo 'export PATH=$PATH:/var/lib/snapd/snap/bin'
 
 if status is-interactive
     # --- Общие настройки ---
     set fish_greeting  # Без приветствия
 
     # --- Инициализация внешних инструментов ---
-    starship init fish | source
+    # starship init fish | source
 
     # if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
     #     cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
@@ -65,6 +65,8 @@ if status is-interactive
     abbr -a sss 'sudo systemctl start'
     abbr -a ssst 'sudo systemctl stop'
 
+    abbr -a sse 'sudo systemctl enable'
+    abbr -a ssd 'sudo systemctl disable'
     # Copy 
 
     abbr -a copy "wl-copy <"
