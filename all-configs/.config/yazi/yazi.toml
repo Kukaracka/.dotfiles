@@ -6,6 +6,7 @@ sort_reverse   = false
 sort_dir_first = true
 show_hidden    = true  # Всегда показывать скрытые файлы
 show_symlink   = true
+linemode = "size"
 
 [preview]
 tab_size        = 2
@@ -13,12 +14,34 @@ max_width       = 1000
 max_height      = 1000
 cache_dir       = ""
 
+[[plugin.prepend_previewers]]
+mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}"
+run  = "ouch"
+ 
+# [plugin]
+# prepend_previewers = [
+# 	# Change the top-level archive icon
+# 	{ ..., run = "ouch --archive-icon='🗄️ '" },
+# 	# Or remove it by setting it to ''
+# 	{ ..., run = "ouch --archive-icon=''" },
+#
+# 	# Enable file icons
+# 	{ ..., run = "ouch --show-file-icons" },
+#
+# 	# Disable tree view
+# 	{ ..., run = "ouch --list-view" },
+#
+# 	# These can be combined
+# 	{ ..., run = "ouch --archive-icon='🗄️ ' --show-file-icons --list-view" },
+# ]
+
+
 [opener]
 # Чем открывать файлы (настрой под свой софт)
 edit = [
     { run = 'nvim "$@"', block = true, desc = "NeoVim" },
 ]
-play = [
+play_alt = [
     { run = 'mpv "$@"', orphan = true, desc = "MPV" },
 ]
 
@@ -27,7 +50,7 @@ copy = [
     { run = 'wl-copy < "$@"', orphan = true, desc = "Clipboard" },
 ]
 
-play_vlc = [
+play = [
     { run = 'vlc "$@"', orphan = true, desc = "VLC" },
 ]
 
@@ -43,7 +66,7 @@ rules = [
 	# Image
 	{ mime = "image/*", use = ["open_img" , "open", "reveal" , "copy"] },
 	# Media
-	{ mime = "{audio,video}/*", use = [ "play", "play_vlc", "reveal" , "copy"] },
+	{ mime = "{audio,video}/*", use = [ "play", "play_alt", "reveal" , "copy"] },
 	# Archive
 	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract", "reveal" ] },
 	# JSON
@@ -55,4 +78,5 @@ rules = [
 	{ mime = "vfs/{absent,stale}", use = "download", "copy" },
 	# Fallback
 	{ url = "*", use = [ "open", "reveal", "copy" ] },
+  { url = "*.mkv", use = [ "play","play_alt",  "edit" ] },
 ]

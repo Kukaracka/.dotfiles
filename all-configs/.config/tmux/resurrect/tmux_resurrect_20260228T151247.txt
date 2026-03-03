@@ -1,0 +1,12 @@
+pane	bluetooth	1	1	:*	1	bluetui ~	:/home/kukaracka	1	fish	:
+pane	main	1	1	:*	1	yay -S systemd-manag ~/P/D/pr2	:/home/kukaracka/Projects/Data_analys/pr2	1	yay	:yay -S systemd-manager-tui
+pane	main	2	0	:-	1	~	:/home/kukaracka	1	fish	:[fish] <defunct>
+pane	torrent	1	1	:*	1	superseedr ~	:/home/kukaracka	1	superseedr	:[fish] <defunct>
+superseedr
+pane	wi-fi	1	1	:*	1	impala ~	:/home/kukaracka	1	fish	:
+window	bluetooth	1	:fish	1	:*	bfbe,135x35,0,0,1	:
+window	main	1	:yay	1	:*	bfbf,135x35,0,0,2	:
+window	main	2	:fish	0	:-	bfc2,135x35,0,0,5	:
+window	torrent	1	:superseedr	1	:*	bfc0,135x35,0,0,3	:
+window	wi-fi	1	:fish	1	:*	bfc1,135x35,0,0,4	:
+state	main	torrent

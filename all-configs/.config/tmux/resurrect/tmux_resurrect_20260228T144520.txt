@@ -1,0 +1,3 @@
+pane	main	1	1	:*	1	~	:/home/kukaracka	1	fish	:[fish] <defunct>
+window	main	1	:fish	1	:*	bfbf,135x35,0,0,2	:
+state	main	

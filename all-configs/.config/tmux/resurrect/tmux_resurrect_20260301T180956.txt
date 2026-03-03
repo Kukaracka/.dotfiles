@@ -1,0 +1,20 @@
+pane	bluetooth	1	1	:*	1	bluetui ~	:/home/kukaracka	1	bluetui	:bluetui
+pane	main	1	1	:*	1	nvim . ~/P/D/pr5	:/home/kukaracka/Projects/Data_analys/pr5	1	nvim	:[fish] <defunct>
+nvim .
+pane	main	2	0	:	1	~	:/home/kukaracka	1	fish	:
+pane	main	3	0	:	1	~/P/Data_analys	:/home/kukaracka/Projects/Data_analys	1	fish	:
+pane	main	4	0	:-	1	~	:/home/kukaracka	1	fish	:[fish] <defunct>
+pane	pomodoro-timer	1	1	:*	1	pomo ~	:/home/kukaracka	1	pomo	:pomo
+pane	torrent	1	1	:*	1	superseedr ~	:/home/kukaracka	1	superseedr	:[fish] <defunct>
+superseedr
+pane	wi-fi	1	1	:*	1	impala ~	:/home/kukaracka	1	impala	:impala
+pane	wi-fi	1	1	:*	2	bluetui ~	:/home/kukaracka	0	bluetui	:bluetui
+window	bluetooth	1	:bluetui	1	:*	bfc4,135x35,0,0,7	:
+window	main	1	:nvim	1	:*	c87f,146x37,0,0,2	:
+window	main	2	:fish	0	:	bfc6,135x35,0,0,9	:
+window	main	3	:fish	0	:	646f,146x37,0,0,10	:
+window	main	4	:fish	0	:-	6470,146x37,0,0,11	:
+window	pomodoro-timer	1	:pomo	1	:*	c880,146x37,0,0,3	:
+window	torrent	1	:superseedr	1	:*	bfc1,135x35,0,0,4	:
+window	wi-fi	1	:impala	1	:*	cb9a,135x35,0,0{67x35,0,0,5,67x35,68,0,8}	:
+state	main	pomodoro-timer

@@ -27,17 +27,17 @@ if status is-interactive
     # alias pacman='sudo pacman'  # безопаснее: всегда с sudo
     alias q='qs -c ii'       # твоя кастомная команда
 
-    # --- Абревиатуры: сокращения для часто вводимых команд ---
-    # Навигация по проектам
-    abbr -a dp 'cd ~/Projects/DigitalPassport/'
-    abbr -a st 'cd ~/Projects/SkillTracker/'
 
     # Редактор и окружения
     abbr -a n 'nvim'
     abbr -a c 'clear'
     # abbr -a y 'yazi'
     abbr -a sen 'sudo -E nvim'
-    abbr -a venv 'source .venv/bin/activate.fish'
+    abbr -a bt 'bluetui'
+    abbr -a wf 'impala'
+
+
+    abbr -a venv 'source .venv/bi/activate.fish'
 
     # Пакетный менеджер
     abbr -a spcs  'sudo pacman -S'
@@ -92,3 +92,6 @@ and not set -q TMUX
     # Пытаемся подключиться к сессии с именем "main", если её нет — создаем
     exec tmux new-session -A -s main
 end
+
+# Created by `pipx` on 2026-02-28 06:47:13
+set PATH $PATH /home/kukaracka/.local/bin

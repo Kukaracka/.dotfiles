@@ -1,0 +1,9 @@
+pane	bluetooth	1	1	:*	1	bluetui ~	:/home/kukaracka	1	bluetui	:bluetui
+pane	main	1	1	:*	1	Yazi: ~/Downloads	:/home/kukaracka/Downloads	1	yazi	:yazi --cwd-file=/tmp/yazi-cwd.IfGC7N
+pane	torrent	1	1	:*	1	superseedr ~	:/home/kukaracka	1	superseedr	:superseedr
+pane	wi-fi	1	1	:*	1	impala ~	:/home/kukaracka	1	impala	:impala
+window	bluetooth	1	:bluetui	1	:*	bfc1,135x35,0,0,4	:
+window	main	1	:yazi	1	:*	bfbf,135x35,0,0,2	:
+window	torrent	1	:superseedr	1	:*	bfc0,135x35,0,0,3	:
+window	wi-fi	1	:impala	1	:*	bfc2,135x35,0,0,5	:
+state	main	wi-fi

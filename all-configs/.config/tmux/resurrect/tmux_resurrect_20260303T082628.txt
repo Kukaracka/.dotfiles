@@ -1,0 +1,18 @@
+pane	bluetooth	1	1	:*	1	bluetui ~	:/home/kukaracka	1	bluetui	:bluetui
+pane	main	1	0	:	1	~/P/Ris	:/home/kukaracka/Projects/Ris	1	fish	:
+pane	main	2	0	:-	1	~/P/Ris	:/home/kukaracka/Projects/Ris	1	fish	:
+pane	main	3	1	:*	1	~/P/Ris	:/home/kukaracka/Projects/Ris	1	fish	:
+pane	monitoring	1	1	:*	1	btop ~	:/home/kukaracka	1	btop	:[fish] <defunct>
+btop
+pane	monitoring	2	0	:-	1	nvtop ~	:/home/kukaracka	1	nvtop	:nvtop
+pane	torrent	1	1	:*	1	superseedr ~	:/home/kukaracka	1	superseedr	:superseedr
+pane	wifi	1	1	:*	1	impala ~	:/home/kukaracka	1	impala	:impala
+window	bluetooth	1	:bluetui	1	:*	bfbe,135x35,0,0,1	:
+window	main	1	:fish	0	:	c885,146x37,0,0,8	:
+window	main	2	:fish	0	:-	c886,146x37,0,0,9	:
+window	main	3	:fish	1	:*	646f,146x37,0,0,10	:
+window	monitoring	1	:btop	1	:*	bfc0,135x35,0,0,3	:
+window	monitoring	2	:nvtop	0	:-	bfc1,135x35,0,0,4	:
+window	torrent	1	:superseedr	1	:*	bfc2,135x35,0,0,5	:
+window	wifi	1	:impala	1	:*	bfc3,135x35,0,0,6	:
+state	main	monitoring

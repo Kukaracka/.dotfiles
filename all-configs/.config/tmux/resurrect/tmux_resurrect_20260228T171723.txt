@@ -1,0 +1,11 @@
+pane	bluetooth	1	1	:*	1	bluetui ~	:/home/kukaracka	1	bluetui	:bluetui
+pane	main	1	1	:*	1	~/.config	:/home/kukaracka/.config	1	fish	:fish
+pane	pomodoro-timer	1	1	:*	1	pomo ~	:/home/kukaracka	1	pomo	:pomo
+pane	torrent	1	1	:*	1	superseedr ~	:/home/kukaracka	1	superseedr	:superseedr
+pane	wi-fi	1	1	:*	1	impala ~	:/home/kukaracka	1	impala	:impala
+window	bluetooth	1	:bluetui	1	:*	bfbe,135x35,0,0,1	:
+window	main	1	:fish	1	:*	bfbf,135x35,0,0,2	:
+window	pomodoro-timer	1	:pomo	1	:*	bfc4,135x35,0,0,7	:
+window	torrent	1	:superseedr	1	:*	bfc0,135x35,0,0,3	:
+window	wi-fi	1	:impala	1	:*	bfc1,135x35,0,0,4	:
+state	main	pomodoro-timer

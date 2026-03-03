@@ -1,0 +1,11 @@
+pane	bluetooth	1	1	:*	1	bluetui ~	:/home/kukaracka	1	fish	:[fish] <defunct>
+pane	main	1	1	:*	1	yay -S systemd-manag ~/P/D/pr2	:/home/kukaracka	1	fish	:
+pane	main	2	0	:-	1	~	:/home/kukaracka	1	fish	:
+pane	torrent	1	1	:*	1	~	:/home/kukaracka	1	fish	:[fish] <defunct>
+pane	wi-fi	1	1	:*	1	~	:/home/kukaracka	1	fish	:[fish] <defunct>
+window	bluetooth	1	:fish	1	:*	bfbe,135x35,0,0,1	:
+window	main	1	:fish	1	:*	bfc0,135x35,0,0,3	:
+window	main	2	:fish	0	:-	bfc3,135x35,0,0,6	:
+window	torrent	1	:fish	1	:*	bfc1,135x35,0,0,4	:
+window	wi-fi	1	:fish	1	:*	bfc2,135x35,0,0,5	:
+state	bluetooth	main

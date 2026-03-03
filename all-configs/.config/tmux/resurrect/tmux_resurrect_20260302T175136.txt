@@ -1,0 +1,18 @@
+pane	bluetooth	1	1	:*	1	~	:/home/kukaracka	1	fish	:[fish] <defunct>
+pane	main	1	0	:-	1	nvim . ~/P/D/pr5	:/home/kukaracka/Projects/Data_analys/pr5	1	nvim	:[fish] <defunct>
+nvim .
+pane	main	2	0	:	1	~	:/home/kukaracka	1	fish	:[fish] <defunct>
+pane	main	3	0	:	1	~/P/Console_panel	:/home/kukaracka/Projects/Console_panel	1	fish	:[fish] <defunct>
+pane	main	4	1	:*	1	~/P/Data_analys	:/home/kukaracka/Projects/Data_analys	1	fish	:[fish] <defunct>
+pane	pomodoro	1	1	:*	1	~	:/home/kukaracka	1	fish	:
+pane	torrent	1	1	:*	1	~	:/home/kukaracka	1	fish	:[fish] <defunct>
+pane	wifi	1	1	:*	1	impala ~	:/home/kukaracka	1	impala	:impala
+window	bluetooth	1	:fish	1	:*	bfbe,135x35,0,0,1	:
+window	main	1	:nvim	0	:-	bfbf,135x35,0,0,2	:
+window	main	2	:fish	0	:	bfc0,135x35,0,0,3	:
+window	main	3	:fish	0	:	bfc1,135x35,0,0,4	:
+window	main	4	:fish	1	:*	bfc2,135x35,0,0,5	:
+window	pomodoro	1	:fish	1	:*	6010,135x35,0,0,11	:
+window	torrent	1	:fish	1	:*	bfc4,135x35,0,0,7	:
+window	wifi	1	:impala	1	:*	bfc5,135x35,0,0,8	:
+state	pomodoro	main
