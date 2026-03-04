@@ -17,7 +17,13 @@ return {
     }):map("<leader>uk")
 
     opts.enabled = function()
+      -- Отключаем, если:
+      -- 1. Переключатель выключен (ваша логика)
+      -- 2. Тип буфера "prompt" (поля ввода поиска)
+      -- 3. Это обычная командная строка (нажатие ":")
       return vim.b.completion ~= false
+        and not vim.tbl_contains({ "prompt" }, vim.bo.buftype)
+        and vim.api.nvim_get_mode().mode ~= "c"
     end
     return opts
   end,
