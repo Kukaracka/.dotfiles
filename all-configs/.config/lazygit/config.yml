@@ -1,0 +1,44 @@
+gui:
+  # Включает иконки (нужен шрифт Nerd Font, например JetBrainsMono Nerd Font)
+  nerdFontsVersion: "3"
+  # Отображает измененные файлы в виде дерева, а не плоским списком
+  showFileTree: true
+  # Сразу выходит в терминал при закрытии (без подтверждения "Press enter")
+  returnImmediately: true
+  # Закругленные границы окон (выглядит современнее)
+  border: 'rounded'
+  # Тема (акцент на синий/голубой, можно настроить под себя)
+  theme:
+    activeBorderColor:
+      - '#fabd2f' # Gruvbox Yellow (яркое выделение)
+      - bold
+    inactiveBorderColor:
+      - '#a89984' # Gruvbox Gray (спокойный серый)
+    selectedLineBgColor:
+      - '#3c3836' # Gruvbox Dark 1 (мягкий фон выделения)
+    selectedRangeBgColor:
+      - '#3c3836'
+    cherryPickedCommitFgColor:
+      - '#8ec07c' # Gruvbox Aqua
+    cherryPickedCommitBgColor:
+      - '#458588' # Gruvbox Blue
+    markedBaseCommitFgColor:
+      - '#fabd2f' # Gruvbox Yellow
+    markedBaseCommitBgColor:
+      - '#d65d0e' # Gruvbox Orange
+git:
+  # Настройка внешнего вида диффов (разницы в коде)
+  pagers:
+    - colorArg: always
+      # Если установлен delta (рекомендую), раскомментируй строку ниже:
+      # pager: delta --dark --paging=never
+os:
+  # Редактор, который будет открываться по нажатию 'e'
+  # Возможные пресеты: nvim, vim, code (VS Code), nano
+  editPreset: 'nvim'
+# Пример кастомной команды: нажми 'C', чтобы быстро сделать commit с текстом "wip"
+customCommands:
+  - key: 'C'
+    command: 'git commit -m "wip"'
+    context: 'files'
+    description: 'быстрый commit (wip)'
