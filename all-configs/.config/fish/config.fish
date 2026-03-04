@@ -35,9 +35,11 @@ if status is-interactive
     abbr -a sen 'sudo -E nvim'
     abbr -a bt 'bluetui'
     abbr -a wf 'impala'
+    abbr -a lzd 'lazydocker'
+    abbr -a lzg 'lazygit'
 
 
-    abbr -a venv 'source .venv/bi/activate.fish'
+    abbr -a venv 'source .venv/bin/activate.fish'
 
     # Пакетный менеджер
     abbr -a spcs  'sudo pacman -S'
