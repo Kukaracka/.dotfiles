@@ -1,0 +1,40 @@
+gui:
+  # Тот самый параметр, который убирает "Press enter to return"
+  returnImmediately: true
+  
+  # Закругленные границы окон
+  border: 'rounded'
+  
+  # Интервал обновления данных (по умолчанию 100ms)
+  refreshInterval: 100
+
+  # Настройка цветовой темы (пример под темную тему)
+  theme:
+    activeBorderColor:
+      - '#fabd2f' # Gruvbox Yellow (фокус)
+      - bold
+    inactiveBorderColor:
+      - '#a89984' # Gruvbox Gray (неактивные панели)
+    selectedLineBgColor:
+      - '#3c3836' # Gruvbox Dark 1 (фон выбранной строки)
+    optionsTextColor:
+      - '#83a598' # Gruvbox Blue (текст подсказок внизу)
+
+# Кастомные команды
+customCommands:
+  containers:
+    # Нажми 'C', чтобы быстро зайти в контейнер через /bin/bash
+    - name: 'bash'
+      attach: true
+      command: 'docker exec -it {{ .Container.ID }} /bin/bash'
+      serviceNames: []
+
+# Настройки графиков (можно добавить свои метрики)
+stats:
+  graphs:
+    - caption: 'CPU (%)'
+      statPath: 'DerivedStats.CPUPercentage'
+      color: 'blue'
+    - caption: 'Memory (%)'
+      statPath: 'DerivedStats.MemoryPercentage'
+      color: 'green'
