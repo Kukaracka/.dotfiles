@@ -19,7 +19,7 @@
 /* note: Main themes in ~/.config/rofi/themes */
 /* You can manually change here or you can use rofi theme selector SUPER SHIFT E */
 configuration {
- modi: "window,drun,ssh,combi,calc,translate";
+ modi: "drun,ssh,combi,calc";
  combi-modi: "window,drun,ssh,calc";
  }
 
@@ -33,4 +33,14 @@ configuration {
 //@theme "~/.config/rofi/themes/KooL_style-9.rasi"
 //@theme "~/.config/rofi/themes/KooL_style-9.rasi"
 //@theme "~/.config/rofi/themes/KooL_style-6.rasi"
-@theme "~/.config/rofi/themes/saint-rofi.rasi"
+//@theme "~/.config/rofi/themes/saint-rofi.rasi"
+
+//@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
+
+//@theme "/home/kukaracka/.local/share/rofi/themes/KooL_style-4.rasi"
+
+//@theme "/home/kukaracka/.local/share/rofi/themes/saint-rofi.rasi"
+
+//@theme "/home/kukaracka/.local/share/rofi/themes/KooL_style-4.rasi"
+
+@theme "/home/kukaracka/.config/rofi/themes/KooL_style-4.rasi"
