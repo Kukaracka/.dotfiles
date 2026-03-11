@@ -5,3 +5,4 @@ vim.keymap.set("n", "<leader>t", "<cmd>:ToggleTerm direction=float<CR>")
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
 vim.keymap.set("n", "<leader>n", "<cmd>ASToggle<CR>", {})
 vim.keymap.set("n", "<C-q>", "<cmd>bdelete<CR>")
+
