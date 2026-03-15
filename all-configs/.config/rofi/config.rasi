@@ -43,4 +43,22 @@ configuration {
 
 //@theme "/home/kukaracka/.local/share/rofi/themes/KooL_style-4.rasi"
 
-@theme "/home/kukaracka/.config/rofi/themes/KooL_style-4.rasi"
+//@theme "/home/kukaracka/.config/rofi/themes/KooL_style-4.rasi"
+
+//@theme "/home/kukaracka/.local/share/rofi/themes/KooL_style-4.rasi"
+
+//@theme "/usr/share/rofi/themes/gruvbox-dark.rasi"
+
+//@theme "/home/kukaracka/.config/rofi/themes/KooL_style-9.rasi"
+
+//@theme "/home/kukaracka/.config/rofi/themes/KooL_style-4.rasi"
+
+//@theme "/home/kukaracka/.config/rofi/themes/gruvbox-theme.rasi"
+
+//@theme "/home/kukaracka/.local/share/rofi/themes/KooL_style-4.rasi"
+
+//@theme "/home/kukaracka/.local/share/rofi/themes/KooL_style-2-Dark.rasi"
+
+//@theme "/home/kukaracka/.local/share/rofi/themes/KooL_style-13-Vertical.rasi"
+
+@theme "/home/kukaracka/.config/rofi/themes/KooL_style-5.rasi"
