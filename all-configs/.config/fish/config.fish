@@ -7,6 +7,7 @@
 
 # Это переменная окружения для работы snap
 # echo 'export PATH=$PATH:/var/lib/snapd/snap/bin'
+bind \ch backward-kill-word
 
 if status is-interactive
     # --- Общие настройки ---
