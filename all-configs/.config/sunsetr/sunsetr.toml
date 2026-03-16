@@ -1,0 +1,9 @@
+latitude = 56.009722
+longitude = 92.791664
+transition_mode = "geo"
+
+day_temp = 6500
+night_temp = 3000
+
+update_interval = 60
+transition_duration = 30
