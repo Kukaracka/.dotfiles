@@ -1,7 +1,13 @@
 spawn-at-startup "waybar"
 
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+
 spawn-at-startup "kitty"
 spawn-at-startup "zen-browser"
 spawn-at-startup "Telegram"
 spawn-at-startup "keepassxc"
 spawn-at-startup "throne"
+spawn-at-startup "tuil" "toggle" "last"
+
+spawn-at-startup "sunsetr"
