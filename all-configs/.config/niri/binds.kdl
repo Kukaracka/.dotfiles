@@ -3,6 +3,11 @@ binds {
     // in the end. To find an XKB name for a particular key, you may use a program
     // like wev.
     //
+     // 1. Скриншот области сразу в буфер обмена
+    Mod+Shift+A { spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy"; }
+
+    // 2. Скриншот области с открытием в редакторе Swappy
+    Mod+Alt+A   { spawn "sh" "-c" "grim -g \"$(slurp)\" - | swappy -f -"; }
     // "Mod" is a special modifier equal to Super when running on a TTY, and to Alt
     // when running as a winit window.
     //
@@ -15,9 +20,14 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+Z hotkey-overlay-title="Run an Application: fuzzel" { spawn-sh "rofi -show drun"; }
+    Mod+Z hotkey-overlay-title="Run an Application: fuzzel" { spawn-sh "rofi -show drun -theme $HOME/.config/rofi/launchers/type-2/style-2.rasi"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+Alt+P hotkey-overlay-title="Run an Application: fuzzel" { spawn "alacritty" "-e" "/home/kukaracka/go/bin/pomo"; }
+
+
+    Mod+Alt+V { spawn "sh" "-c" "cliphist list | rofi -dmenu -theme $HOME/.config/rofi/launchers/type-2/style-2_clip.rasi | cliphist decode | wl-copy"; }
+
+    Mod+Alt+E { spawn-sh "rofi -show emoji -theme $HOME/.config/rofi/launchers/type-2/style-2_clip.rasi"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
