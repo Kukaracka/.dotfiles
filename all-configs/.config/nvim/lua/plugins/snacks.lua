@@ -10,6 +10,10 @@ return {
               -- auto_hide = { "input" }, 
             },
           },
+          files = {
+            hidden = true, -- показывать скрытые файлы
+            dirs = { vim.fn.getcwd() },
+          },
     },
     },
   },
