@@ -1,0 +1,58 @@
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+
+/-window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+
+window-rule {
+    match app-id=r#"^zen$"#
+    open-on-workspace "brow"
+    default-column-width { proportion 1.0; }
+}
+
+
+window-rule {
+    match app-id=r#"^kitty$"#
+    open-on-workspace "term"
+    default-column-width { proportion 1.0; }
+    scroll-factor 4
+}
+
+window-rule {
+    match app-id=r#"^org.telegram.desktop$"#
+    scroll-factor 2.5
+    open-on-workspace "teleg"
+    default-column-width { proportion 1.0; }
+}
+
+
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    open-on-workspace "secur"
+    block-out-from "screen-capture"
+}
+
+
+window-rule {
+    match app-id=r#"^Throne$"#
+    scroll-factor 2.5
+    open-on-workspace "secur"
+    default-column-width {}
+}
+
+window-rule {
+    match app-id=r#"Alacritty"#
+    open-on-workspace "term"
+    open-floating true
+
+    default-column-width { fixed 300; }
+    default-window-height { fixed 180; }
+    default-floating-position x=1220 y=15
+}
