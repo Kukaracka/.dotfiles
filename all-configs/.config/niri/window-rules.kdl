@@ -56,3 +56,8 @@ window-rule {
     default-window-height { fixed 180; }
     default-floating-position x=1220 y=15
 }
+
+window-rule {
+    match app-id=r#"^steam_app_\d+$"#
+    // open-fullscreen true
+}
