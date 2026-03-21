@@ -23,7 +23,12 @@
 "margin-bottom": 0,
 
 "modules-left": [
-	"group/mobo_drawer",
+	//"group/mobo_drawer",
+  "power-profiles-daemon",	
+	"custom/separator#dot-line",
+  "cpu",
+  "memory",
+  "temperature",
 	"custom/separator#dot-line",
 	"tray",
 	//"custom/pomodoro",
@@ -37,7 +42,7 @@
 	"custom/separator#dot-line",
 	"niri/workspaces#rw",
 	"custom/separator#dot-line",
-	"group/notify",
+	"custom/swaync",
 	], 
 
 "modules-right": [

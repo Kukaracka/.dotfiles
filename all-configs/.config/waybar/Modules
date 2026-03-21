@@ -6,11 +6,10 @@
 {
 
 "temperature": {
-	"interval": 10,
+	"interval": 5,
 	"tooltip": true,
 	"hwmon-path": [
-		"/sys/class/hwmon/hwmon1/temp1_input",
-		"/sys/class/thermal/thermal_zone0/temp"
+		"/sys/class/hwmon/hwmon4/temp1_input"
 	],
 	//"thermal-zone": 0,
 	"critical-threshold": 82,
@@ -99,7 +98,8 @@
 "clock": {
 	"interval": 1,
     //"format": " {:%I:%M %p}", // AM PM format
-    "format": " {:%H:%M:%S}", // 24H
+    "format": " {:%H:%M | %a %d, %B }", // 24H
+    //"format": " {:%H:%M:%S | %a %d, %Y }", // 24H
 	//"format-alt": " {:%A, %d %B, %Y}",
 	"format-alt": " {:%A, %d %B}",
 	"tooltip-format": "<tt><small>{calendar}</small></tt>",
@@ -187,6 +187,13 @@
 	"format-tr": "Korea",
 	"keyboard-name": "at-translated-set-2-keyboard",
 	"on-click": "hyprctl switchxkblayout $SET_KB next"
+},
+
+"niri/language": {
+    "format": "{}", 
+    "format-en": "English (Colemak-DH)",
+    "format-ru": "Russian",
+    "format-tr": "TR"
 },
 
 "hyprland/submap": {

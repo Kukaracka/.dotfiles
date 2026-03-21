@@ -199,6 +199,7 @@ window#waybar.empty #window {
     color: @iconcolor;
 }
 
+
 /* -----------------------------------------------------
  * Custom Modules
  * ----------------------------------------------------- */
@@ -246,7 +247,7 @@ window#waybar.empty #window {
     background-color: @backgrounddark;
     color: @textcolor1;
     border-radius: 15px;
-    margin: 10px 2px 10px 0px;
+    margin: 10px 2px 10px 10px;
 }
 
 #custom-pomodoro {
