@@ -1,15 +1,15 @@
-workspace "term" {
+workspace "tr" {
     open-on-output "eDP-1"
 }
 
-workspace "brow" {
+workspace "bw" {
     open-on-output "HDMI-A-1"
 }
 
-workspace "teleg" {
+workspace "tg" {
     open-on-output "eDP-1"
 }
 
-workspace "secur" {
+workspace "sc" {
     open-on-output "eDP-1"
 }
