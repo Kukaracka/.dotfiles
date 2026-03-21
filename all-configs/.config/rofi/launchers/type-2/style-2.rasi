@@ -9,9 +9,10 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun";
+	modi:                       "drun,run";
     show-icons:                 true;
-    display-drun:               "";
+    display-drun:               "📱";
+    display-run:               "🏃‍♂️";
 	drun-display-format:        "{name}";
 }
 
