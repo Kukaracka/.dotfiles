@@ -37,7 +37,7 @@ layout {
 
         // off
 
-        width 1.5
+        width 2
 
         active-color "#ffaf00"
         inactive-color "#505050"

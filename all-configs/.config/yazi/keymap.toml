@@ -33,7 +33,7 @@ desc = "Go to dotfiles directory"
 #-----------DIRECTORIES-------------
 
 [[mgr.prepend_keymap]]
-on = [ "g", "d", "w" ]
+on = [ "g", "w" ]
 run = "cd ~/Downloads"
 desc = "cd ~/Downloads"
 
@@ -43,12 +43,12 @@ run = "cd ~/Documents"
 desc = "cd ~/Documents"
 
 [[mgr.prepend_keymap]]
-on = [ "g", "d", "r" ]
+on = [ "g", "r" ]
 run = "cd ~/Pictures"
 desc = "cd ~/Pictures"
 
 [[mgr.prepend_keymap]]
-on = [ "g", "d", "v" ]
+on = [ "g", "v" ]
 run = "cd ~/Videos"
 desc = "cd ~/Videos"
 
@@ -56,6 +56,11 @@ desc = "cd ~/Videos"
 on = [ "g", "d", "c" ]
 run = "cd ~/.config"
 desc = "cd ~/.config"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "t" ]
+run = "cd ~/Torrents/"
+desc = "cd ~/Torrents/"
 
 [[mgr.prepend_keymap]]
 on = [ "g", "d", "t"]
