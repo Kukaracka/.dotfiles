@@ -24,7 +24,7 @@ binds {
     // =========================
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
 
-    Mod+Z hotkey-overlay-title="Run an Application: rofi" {
+    Mod+B hotkey-overlay-title="Run an Application: rofi" {
         spawn-sh "rofi -show drun run -theme $HOME/.config/rofi/launchers/type-2/style-2.rasi";
     }
 
@@ -65,19 +65,19 @@ binds {
     // AUDIO / MEDIA
     // =========================
     XF86AudioRaiseVolume allow-when-locked=true {
-        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0";
+        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+ -l 2.0 && notify-send -h string:x-canonical-private-synchronous:audio -h int:value:$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2*100}') 'Громкость' \"$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2*100 \"%\"}')\"";
     }
 
     XF86AudioLowerVolume allow-when-locked=true {
-        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";
+        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%- && notify-send -h string:x-canonical-private-synchronous:audio -h int:value:$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2*100}') 'Громкость' \"$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2*100 \"%\"}')\"";
     }
 
     XF86AudioMute allow-when-locked=true {
-        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && notify-send -h string:x-canonical-private-synchronous:audio 'Звук' \"Переключен режим Mute\"";
     }
 
     XF86AudioMicMute allow-when-locked=true {
-        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && notify-send -h string:x-canonical-private-synchronous:audio 'Микрофон' \"Переключен режим Mute\"";
     }
 
     XF86AudioPlay allow-when-locked=true { spawn-sh "playerctl play-pause"; }
@@ -102,10 +102,14 @@ binds {
     Mod+Alt+Right { spawn-sh "$HOME/.config/niri/scripts/LowBrightness.sh"; }
 
 
+    Mod+Ctrl+Shift+S allow-when-locked=true { spawn-sh "shutdown now"; }
+    Mod+Ctrl+Shift+R allow-when-locked=true { spawn-sh "reboot"; }
     // =========================
     // WINDOW MANAGEMENT
     // =========================
     Mod+Q { close-window; }
+    // Принудительное закрытие (SIGKILL) текущего окна
+    Mod+Alt+Q { spawn "sh" "-c" "niri msg focused-window | grep 'ID:' | awk '{print $2}' | xargs kill -9"; }
 
     Mod+V       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
