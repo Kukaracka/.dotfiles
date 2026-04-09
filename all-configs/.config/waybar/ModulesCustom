@@ -26,6 +26,34 @@
 	"on-click": "gnome-weather",
 },
 
+"custom/memory_custom": {
+    "exec": "~/.config/waybar/scripts/memory_usage.sh",
+    "return-type": "json", // Обязательно указываем, что ждем JSON
+    "interval": 3,
+    "tooltip": true,
+    "format": "{} 󰾆  ",
+    "on-click-right": "$HOME/.config/hypr/scripts/WaybarScripts.sh --btop"
+},
+
+
+"custom/cpu_custom": {
+    "exec": "~/.config/waybar/scripts/cpu_usage.sh",
+    "return-type": "json",
+    "interval": 3, // Обновляем чуть чаще для CPU
+    "format": "{}   ",
+    "tooltip": true,
+    "on-click": "alacritty -e btop" // Опционально: открыть монитор ресурсов по клику
+},
+
+
+"custom/temp_custom": {
+    "exec": "~/.config/waybar/scripts/cpu_gpu_temp.sh",
+    "return-type": "json",
+    "interval": 3,
+    "format": "{} ",
+    "tooltip": true
+},
+
 "custom/hyprpicker": {
 	"format": "",
 	"on-click": "hyprpicker | wl-copy",

@@ -117,8 +117,8 @@ binds {
     Mod+BracketLeft  { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
 
-    Mod+Comma  { consume-window-into-column; }
-    Mod+Period { expel-window-from-column; }
+    // Mod+Comma  { consume-window-into-column; }
+    // Mod+Period { expel-window-from-column; }
 
 
     // =========================
@@ -148,10 +148,10 @@ binds {
     // NAVIGATION (COLUMNS)
     // =========================
     Mod+N { focus-column-left; }
-    Mod+O { focus-column-right; }
+    Mod+I { focus-column-right; }
 
     Mod+Ctrl+N { move-column-left; }
-    Mod+Ctrl+O { move-column-right; }
+    Mod+Ctrl+I { move-column-right; }
 
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
@@ -165,13 +165,11 @@ binds {
     // =========================
     Mod+Shift+N { focus-monitor-left; }
     Mod+Shift+E { focus-monitor-down; }
-    Mod+Shift+I { focus-monitor-up; }
-    Mod+Shift+O { focus-monitor-right; }
+    Mod+Shift+U { focus-monitor-up; }
+    Mod+Shift+I { focus-monitor-right; }
 
     Mod+Shift+Ctrl+N { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+E { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+I { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+O { move-column-to-monitor-right; }
+    Mod+Shift+Ctrl+I { move-column-to-monitor-right; }
 
     Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
     Mod+Shift+Ctrl+Right { move-workspace-to-monitor-right; }
@@ -181,13 +179,13 @@ binds {
     // WORKSPACES
     // =========================
     Mod+E { focus-workspace-down; }
-    Mod+I { focus-workspace-up; }
+    Mod+U { focus-workspace-up; }
 
     Mod+Ctrl+E { move-column-to-workspace-down; }
-    Mod+Ctrl+I { move-column-to-workspace-up; }
+    Mod+Ctrl+U { move-column-to-workspace-up; }
 
-    Mod+Shift+Page_Down { move-workspace-down; }
-    Mod+Shift+Page_Up   { move-workspace-up; }
+    Mod+Shift+Down { move-workspace-down; }
+    Mod+Shift+Up   { move-workspace-up; }
 
     // direct access
     Mod+X { focus-workspace 1; }

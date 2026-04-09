@@ -26,6 +26,11 @@ run = "cd ~/Projects"
 desc = "Go to project directory"
 
 [[mgr.prepend_keymap]]
+on = [ "g", "m"]
+run = "cd /run/media/kukaracka/"
+desc = "Go to attached devices"
+
+[[mgr.prepend_keymap]]
 on = [ "g", "c"]
 run = "cd ~/.dotfiles/all-configs/.config"
 desc = "Go to dotfiles directory"

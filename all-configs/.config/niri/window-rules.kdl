@@ -24,9 +24,8 @@ window-rule {
 // =========================
 window-rule {
     match app-id=r#"^zen$"#
-
-    open-on-workspace "bw"
     default-column-width { proportion 1.0; }
+    open-on-workspace "bw"
 }
 
 
@@ -37,7 +36,6 @@ window-rule {
 window-rule {
     match app-id=r#"^kitty$"#
 
-    open-on-workspace "tr"
     default-column-width { proportion 1.0; }
     scroll-factor 4
 }
@@ -45,7 +43,6 @@ window-rule {
 window-rule {
     match app-id=r#"Alacritty"#
 
-    open-on-workspace "tr"
     open-floating true
 
     default-column-width { fixed 300; }
@@ -60,10 +57,9 @@ window-rule {
 // =========================
 window-rule {
     match app-id=r#"^org.telegram.desktop$"#
-
     open-on-workspace "tg"
     default-column-width { proportion 1.0; }
-    scroll-factor 2.5
+    // scroll-factor 2.5
 }
 
 

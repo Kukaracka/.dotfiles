@@ -2,33 +2,34 @@
 /*  ML4W - Waybar Style */
 /* Original design from ML4W - Hyprland Starter Waybar */
 
-@define-color backgroundlight #FFFFFF;
-@define-color backgrounddark #FFFFFF;
-@define-color workspacesbackground1 #FFFFFF;
-@define-color workspacesbackground2 #CCCCCC;
-@define-color bordercolor #FFFFFF;
-@define-color textcolor1 #000000;
-@define-color textcolor2 #000000;
-@define-color textcolor3 #FFFFFF;
-@define-color iconcolor #FFFFFF;
+@define-color backgroundlight #3c3836;   /* Цвета основной панели (Grey 2) */
+@define-color backgrounddark #282828;    /* Глубокий темный фон (Grey 1) */
+@define-color workspacesbackground1 #504945; /* Фон неактивных воркспейсов */
+@define-color workspacesbackground2 #d65d0e; /* Акцентный оранжевый (Active) */
+@define-color bordercolor #928374;       /* Цвет рамок */
+@define-color textcolor1 #ebdbb2;        /* Светло-бежевый текст (основной) */
+@define-color textcolor2 #d5c4a1;        /* Чуть более тусклый бежевый */
+@define-color textcolor3 #fbf1c7;        /* Почти белый для контраста */
+@define-color iconcolor #fabd2f;         /* Желтый для иконок модулей */
 
 /* -----------------------------------------------------
  * General 
  * ----------------------------------------------------- */
 
 * {
+    font-size: 14px;
     font-family: "JetBrainsMono Nerd Font";
     border: none;
     border-radius: 0px;
     font-weight: bold;
     /* max-height: 100px; */
 	/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
-	font-size: 97%;
+	/* font-size: 97%; */
 	font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 }
 
 window#waybar {
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(40, 40, 40, 0.85); /* Темный Gruvbox с легкой прозрачностью */
     border-bottom: 0px solid #ffffff;
     /* color: #FFFFFF; */
     transition-property: background-color;
@@ -88,6 +89,7 @@ tooltip {
     background-color: @backgroundlight;
     opacity:0.8;
     padding:20px;
+    font-size: 16px;
     margin:0px;
 }
 

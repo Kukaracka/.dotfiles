@@ -1,29 +1,17 @@
 input {
 
-    // =========================
-    // GENERAL (FOCUS / MOUSE)
-    // =========================
-    // focus-follows-mouse max-scroll-amount="10%"
-    // focus-follows-mouse{
-    //   //
-    //   //
-    //   max-scroll-amount="10%"
-    //
-    //   //max-scroll-amount="0%"
-    // }
 
-    // Uncomment this to make the mouse warp to the center of newly focused windows.
-    // warp-mouse-to-focus
-
-    // Focus follows mouse (active)
-    focus-follows-mouse max-scroll-amount="20%"
+  // focus-follows-mouse max-scroll-amount="10%"
+  // focus-follows-mouse{
+  //   //
+  //   //
+  //   max-scroll-amount="10%"
+  //
+  //   //max-scroll-amount="0%"
+  // }
 
 
-    // =========================
-    // KEYBOARD
-    // =========================
     keyboard {
-
         repeat-delay 200
         repeat-rate 30
 
@@ -31,10 +19,10 @@ input {
             // You can set rules, model, layout, variant and options.
             // For more information, see xkeyboard-config(7).
 
+            // For example:
             layout "us,ru"
-            variant "colemak_dh_ortho,"
             options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
-
+            variant "colemak_dh_ortho,"
             // If this section is empty, niri will fetch xkb settings
             // from org.freedesktop.locale1. You can control these using
             // localectl set-x11-keymap.
@@ -44,47 +32,32 @@ input {
         numlock
     }
 
-
-    // =========================
-    // TOUCHPAD (LIBINPUT)
-    // =========================
+    // Next sections include libinput settings.
+    // Omitting settings disables them, or leaves them at their default values.
+    // All commented-out settings here are examples, not defaults.
     touchpad {
-
         scroll-factor 0.1
         tap
-        natural-scroll
-
-        accel-speed -0.0
-        accel-profile "flat"
-
         // dwt
         // dwtp
         // drag false
         // drag-lock
+        natural-scroll
+        accel-speed -0.0
+        accel-profile "flat"
         // scroll-method "two-finger"
         // disabled-on-external-mouse
     }
 
-
-    // =========================
-    // MOUSE
-    // =========================
     mouse {
-
-        accel-speed 0
-        accel-profile "flat"
-
         // off
         // natural-scroll
+        accel-speed 0
+        accel-profile "flat"
         // scroll-method "no-scroll"
     }
 
-
-    // =========================
-    // TRACKPOINT
-    // =========================
     trackpoint {
-
         // off
         // natural-scroll
         // accel-speed 0.2
@@ -94,4 +67,11 @@ input {
         // scroll-button-lock
         // middle-emulation
     }
+
+    // Uncomment this to make the mouse warp to the center of newly focused windows.
+    // warp-mouse-to-focus
+
+    // Focus windows and outputs automatically when moving the mouse into them.
+    // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
+    focus-follows-mouse max-scroll-amount="20%"
 }

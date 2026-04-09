@@ -13,3 +13,8 @@ workspace "tg" {
 workspace "sc" {
     open-on-output "eDP-1"
 }
+
+workspace "etc" {
+    open-on-output "eDP-1"
+}
+

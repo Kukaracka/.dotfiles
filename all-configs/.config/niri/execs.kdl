@@ -14,14 +14,22 @@ spawn-at-startup "autossh" "-M" "0" "-f" "-N" "-o" "ServerAliveInterval 30" "-o"
 spawn-at-startup "syncthing" "--no-browser"
 
 /// Запуск демона локскрина
-spawn-at-startup "hypridle"
+// spawn-at-startup "hypridle"
 
-/// Запуск утилиты, отвечающей за 
+
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP=niri"
+
+spawn-at-startup "sh" "-c" "~/.config/niri/scripts/launch_to_ws.sh kitty kitty tr"
+
+/// Запуск утилиты, отвечающей за переменную температуру дисплея
 spawn-at-startup "sunsetr"
 
-/// Запуск приложений при старте системы
-spawn-at-startup "kitty"
-spawn-at-startup "zen-browser"
-spawn-at-startup "Telegram"
 spawn-at-startup "keepassxc"
+spawn-at-startup "Telegram"
 spawn-at-startup "throne"
+spawn-at-startup "zen-browser"
+
+// spawn-at-startup "sh" "-c" "sleep 1 && ~/.config/niri/scripts/launch_to_ws.sh zen-browser zen bw"
+// spawn-at-startup "sh" "-c" "sleep 2 && ~/.config/niri/scripts/launch_to_ws.sh Telegram org.telegram.desktop tg"
+// spawn-at-startup "sh" "-c" "sleep 3 && ~/.config/niri/scripts/launch_to_ws.sh keepassxc org.keepassxc.KeePassXC sc"
+// spawn-at-startup "sh" "-c" "sleep 4 && ~/.config/niri/scripts/launch_to_ws.sh throne Throne sc"

@@ -1,1 +1,4 @@
-/all-configs/.config/fish/fish_variables
+/all-configs/.config/fish/fish_variables*
+/all-configs/.config/tmux/resurrect/*
+/all-configs/.config/tmux/resurrect/last
+
