@@ -49,7 +49,7 @@
 	"smooth-scrolling-threshold": 1,
 },
 
-"backlight#2": {
+"backligh#2": {
   "device": "intel_backlight",
   "format": "{icon} {percent}%",
   "format-icons": ["", ""]
@@ -192,7 +192,7 @@
 
 "niri/language": {
     "format": "{}", 
-    "format-en": "English (Colemak-DH)",
+    "format-en": "English",
     "format-ru": "Russian",
     "format-tr": "TR"
 },
