@@ -24,16 +24,12 @@ binds {
     // =========================
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
 
-    Mod+B hotkey-overlay-title="Run an Application: rofi" {
+    Mod+T hotkey-overlay-title="Run an Application: rofi" {
         spawn-sh "rofi -show drun run -theme $HOME/.config/rofi/launchers/type-2/style-2.rasi";
     }
 
-    Mod+Alt+P hotkey-overlay-title="Run Pomo timer" {
+    Mod+Alt+R hotkey-overlay-title="Run Pomo timer" {
         spawn "alacritty" "-e" "/home/kukaracka/go/bin/pomo";
-    }
-
-    Mod+Alt+Y hotkey-overlay-title="Open swaync menu" {
-        spawn-sh "swaync-client -t -sw";
     }
 
     Mod+Alt+Down hotkey-overlay-title="Openrgb white light" {
@@ -48,7 +44,7 @@ binds {
     // =========================
     // CLIPBOARD / UTILITIES
     // =========================
-    Mod+Alt+V {
+    Mod+Alt+B {
         spawn "sh" "-c" "cliphist list | rofi -dmenu -theme $HOME/.config/rofi/launchers/type-2/style-2_clip.rasi | cliphist decode | wl-copy";
     }
 
@@ -97,9 +93,9 @@ binds {
         spawn "brightnessctl" "--class=backlight" "set" "10%-";
     }
 
-    Mod+Alt+Left  { spawn-sh "$HOME/.config/niri/scripts/HighBrightness.sh"; }
-    Mod+Alt+Up    { spawn-sh "$HOME/.config/niri/scripts/MediumBrightness.sh"; }
-    Mod+Alt+Right { spawn-sh "$HOME/.config/niri/scripts/LowBrightness.sh"; }
+    Mod+Alt+J  { spawn-sh "$HOME/.config/niri/scripts/HighBrightness.sh"; }
+    Mod+Alt+I    { spawn-sh "$HOME/.config/niri/scripts/MediumBrightness.sh"; }
+    Mod+Alt+L { spawn-sh "$HOME/.config/niri/scripts/LowBrightness.sh"; }
 
 
     Mod+Ctrl+Shift+S allow-when-locked=true { spawn-sh "shutdown now"; }
@@ -111,8 +107,8 @@ binds {
     // Принудительное закрытие (SIGKILL) текущего окна
     Mod+Alt+Q { spawn "sh" "-c" "niri msg focused-window | grep 'ID:' | awk '{print $2}' | xargs kill -9"; }
 
-    Mod+V       { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+B       { toggle-window-floating; }
+    Mod+Shift+B { switch-focus-between-floating-and-tiling; }
 
     Mod+BracketLeft  { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
@@ -141,17 +137,17 @@ binds {
     // =========================
     // OVERVIEW
     // =========================
-    Mod+Alt+O repeat=false { toggle-overview; }
+    Mod+Alt+Semicolon repeat=false { toggle-overview; }
 
 
     // =========================
     // NAVIGATION (COLUMNS)
     // =========================
-    Mod+N { focus-column-left; }
-    Mod+I { focus-column-right; }
+    Mod+J { focus-column-left; }
+    Mod+L { focus-column-right; }
 
-    Mod+Ctrl+N { move-column-left; }
-    Mod+Ctrl+I { move-column-right; }
+    Mod+Ctrl+J { move-column-left; }
+    Mod+Ctrl+L { move-column-right; }
 
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
@@ -163,13 +159,13 @@ binds {
     // =========================
     // NAVIGATION (MONITORS)
     // =========================
-    Mod+Shift+N { focus-monitor-left; }
-    Mod+Shift+E { focus-monitor-down; }
-    Mod+Shift+U { focus-monitor-up; }
-    Mod+Shift+I { focus-monitor-right; }
+    Mod+Shift+J { focus-monitor-left; }
+    Mod+Shift+K { focus-monitor-down; }
+    Mod+Shift+I { focus-monitor-up; }
+    Mod+Shift+L { focus-monitor-right; }
 
-    Mod+Shift+Ctrl+N { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+I { move-column-to-monitor-right; }
+    Mod+Shift+Ctrl+J { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+L { move-column-to-monitor-right; }
 
     Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
     Mod+Shift+Ctrl+Right { move-workspace-to-monitor-right; }
@@ -178,11 +174,11 @@ binds {
     // =========================
     // WORKSPACES
     // =========================
-    Mod+E { focus-workspace-down; }
-    Mod+U { focus-workspace-up; }
+    Mod+K { focus-workspace-down; }
+    Mod+I { focus-workspace-up; }
 
-    Mod+Ctrl+E { move-column-to-workspace-down; }
-    Mod+Ctrl+U { move-column-to-workspace-up; }
+    Mod+Ctrl+K { move-column-to-workspace-down; }
+    Mod+Ctrl+I { move-column-to-workspace-up; }
 
     Mod+Shift+Down { move-workspace-down; }
     Mod+Shift+Up   { move-workspace-up; }
@@ -190,23 +186,23 @@ binds {
     // direct access
     Mod+X { focus-workspace 1; }
     Mod+C { focus-workspace 2; }
-    Mod+D { focus-workspace 3; }
-    Mod+R { focus-workspace 4; }
-    Mod+S { focus-workspace 5; }
-    Mod+T { focus-workspace 6; }
+    Mod+V { focus-workspace 3; }
+    Mod+S { focus-workspace 4; }
+    Mod+D { focus-workspace 5; }
+    Mod+F { focus-workspace 6; }
     Mod+W { focus-workspace 7; }
-    Mod+F { focus-workspace 8; }
-    Mod+P { focus-workspace 9; }
+    Mod+E { focus-workspace 8; }
+    Mod+R { focus-workspace 9; }
 
     Mod+Ctrl+X { move-column-to-workspace 1; }
     Mod+Ctrl+C { move-column-to-workspace 2; }
-    Mod+Ctrl+D { move-column-to-workspace 3; }
-    Mod+Ctrl+R { move-column-to-workspace 4; }
-    Mod+Ctrl+S { move-column-to-workspace 5; }
-    Mod+Ctrl+T { move-column-to-workspace 6; }
+    Mod+Ctrl+V { move-column-to-workspace 3; }
+    Mod+Ctrl+S { move-column-to-workspace 4; }
+    Mod+Ctrl+D { move-column-to-workspace 5; }
+    Mod+Ctrl+F { move-column-to-workspace 6; }
     Mod+Ctrl+W { move-column-to-workspace 7; }
-    Mod+Ctrl+F { move-column-to-workspace 8; }
-    Mod+Ctrl+P { move-column-to-workspace 9; }
+    Mod+Ctrl+E { move-column-to-workspace 8; }
+    Mod+Ctrl+R { move-column-to-workspace 9; }
 
 
     // =========================

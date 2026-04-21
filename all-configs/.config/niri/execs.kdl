@@ -8,7 +8,7 @@ spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 /// Прокидывание ssh портов на панели
 spawn-at-startup "autossh" "-M" "0" "-f" "-N" "-o" "ServerAliveInterval 30" "-o" "ServerAliveCountMax 3" "-L" "1338:127.0.0.1:56478" "vps_tema"
 spawn-at-startup "autossh" "-M" "0" "-f" "-N" "-o" "ServerAliveInterval 30" "-o" "ServerAliveCountMax 3" "-L" "1340:127.0.0.1:46734" "vps_new_nl"
-spawn-at-startup "autossh" "-M" "0" "-f" "-N" "-o" "ServerAliveInterval 30" "-o" "ServerAliveCountMax 3" "-L" "1342:127.0.0.1:56478" "vps_nobosib"
+spawn-at-startup "autossh" "-M" "0" "-f" "-N" "-o" "ServerAliveInterval 30" "-o" "ServerAliveCountMax 3" "-L" "1342:127.0.0.1:37483" "vps_nobosib"
 
 /// Запуск syncthing
 spawn-at-startup "syncthing" "--no-browser"
