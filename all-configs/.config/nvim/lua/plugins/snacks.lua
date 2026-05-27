@@ -2,19 +2,19 @@ return {
   "folke/snacks.nvim",
   opts = {
     picker = {
-      -- hidden = true,   -- Shows hidden files (dotfiles)
-      -- ignored = true,  -- Shows files ignored by .gitignore
       sources = {
-          explorer = {
+        explorer = {
+          layout = {
             layout = {
-              -- auto_hide = { "input" }, 
+              width = 25, -- Установите здесь нужную ширину (например, 40)
             },
           },
-          files = {
-            hidden = true, -- показывать скрытые файлы
-            dirs = { vim.fn.getcwd() },
-          },
-    },
+        },
+        files = {
+          hidden = true,
+          dirs = { vim.fn.getcwd() },
+        },
+      },
     },
   },
 }

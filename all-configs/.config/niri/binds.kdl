@@ -25,7 +25,7 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
 
     Mod+T hotkey-overlay-title="Run an Application: rofi" {
-        spawn-sh "rofi -show drun run -theme $HOME/.config/rofi/launchers/type-2/style-2.rasi";
+        spawn-sh "$HOME/.config/niri/scripts/toggle_rofi.sh"
     }
 
     Mod+Alt+R hotkey-overlay-title="Run Pomo timer" {
@@ -93,9 +93,9 @@ binds {
         spawn "brightnessctl" "--class=backlight" "set" "10%-";
     }
 
-    Mod+Alt+J  { spawn-sh "$HOME/.config/niri/scripts/HighBrightness.sh"; }
-    Mod+Alt+I    { spawn-sh "$HOME/.config/niri/scripts/MediumBrightness.sh"; }
-    Mod+Alt+L { spawn-sh "$HOME/.config/niri/scripts/LowBrightness.sh"; }
+    Mod+Alt+Left  { spawn-sh "$HOME/.config/niri/scripts/HighBrightness.sh"; }
+    Mod+Alt+Up    { spawn-sh "$HOME/.config/niri/scripts/MediumBrightness.sh"; }
+    Mod+Alt+Right { spawn-sh "$HOME/.config/niri/scripts/LowBrightness.sh"; }
 
 
     Mod+Ctrl+Shift+S allow-when-locked=true { spawn-sh "shutdown now"; }

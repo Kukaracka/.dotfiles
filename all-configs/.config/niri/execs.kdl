@@ -9,9 +9,11 @@ spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 spawn-at-startup "autossh" "-M" "0" "-f" "-N" "-o" "ServerAliveInterval 30" "-o" "ServerAliveCountMax 3" "-L" "1338:127.0.0.1:56478" "vps_tema"
 spawn-at-startup "autossh" "-M" "0" "-f" "-N" "-o" "ServerAliveInterval 30" "-o" "ServerAliveCountMax 3" "-L" "1340:127.0.0.1:46734" "vps_new_nl"
 spawn-at-startup "autossh" "-M" "0" "-f" "-N" "-o" "ServerAliveInterval 30" "-o" "ServerAliveCountMax 3" "-L" "1342:127.0.0.1:37483" "vps_nobosib"
+spawn-at-startup "autossh" "-M" "0" "-f" "-N" "-o" "ServerAliveInterval 30" "-o" "ServerAliveCountMax 3" "-L" "1344:127.0.0.1:2096" "vps_german"
 
 /// Запуск syncthing
 spawn-at-startup "syncthing" "--no-browser"
+spawn-at-startup "tg-ws-proxy" 
 
 /// Запуск демона локскрина
 // spawn-at-startup "hypridle"
