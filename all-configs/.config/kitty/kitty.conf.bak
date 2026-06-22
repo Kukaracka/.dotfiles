@@ -27,11 +27,13 @@ wheel_scroll_min_lines 1
 enable_audio_bell no
 
 window_padding_width 0
-# selection_foreground none
-# selection_background none
-# foreground #dddddd
-# background #000000
-# cursor #dddddd
+
+selection_foreground none
+selection_background none
+
+foreground #dddddd
+background #000000
+cursor #dddddd
 
 
 
@@ -40,7 +42,7 @@ cursor_shape beam
 cursor_trail 0
 
 # Padding (why weird value? consistency with foot)
-window_margin_width 0
+window_margin_width 2
 
 # No stupid close confirmation
 confirm_os_window_close 0
@@ -77,9 +79,3 @@ map ctrl+0 change_font_size all 0
 map ctrl+kp_0 change_font_size all 0
 
 include ./gruvbox_dark_soft.conf
-
-
-# BEGIN_KITTY_THEME
-# Noctalia
-include current-theme.conf
-# END_KITTY_THEME

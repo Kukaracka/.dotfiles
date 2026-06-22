@@ -3,9 +3,9 @@ layout {
     // =========================
     // GLOBAL SETTINGS
     // =========================
-    gaps 5
+    gaps 8
     center-focused-column "never"
-
+    always-center-single-column
 
     // =========================
     // COLUMN WIDTHS
@@ -13,7 +13,6 @@ layout {
     preset-column-widths {
 
         // Proportional widths (relative to screen)
-        proportion 0.33333
         proportion 0.5
         proportion 0.66667
 

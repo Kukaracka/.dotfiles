@@ -1,5 +1,6 @@
 /// Бар сверху монитора
-spawn-at-startup "waybar"
+// spawn-at-startup "waybar"
+spawn-at-startup "qs" "-c" "noctalia-shell"
 
 /// Запуск утилиты, отвечающей за историю буфера обмена
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
@@ -24,12 +25,13 @@ spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPL
 spawn-at-startup "sh" "-c" "~/.config/niri/scripts/launch_to_ws.sh kitty kitty tr"
 
 /// Запуск утилиты, отвечающей за переменную температуру дисплея
-spawn-at-startup "sunsetr"
+// spawn-at-startup "sunsetr"
 
 spawn-at-startup "keepassxc"
 spawn-at-startup "Telegram"
 spawn-at-startup "throne"
 spawn-at-startup "zen-browser"
+// spawn-at-startup "chromium" "--app=https://mail.mail.ru/"
 
 // spawn-at-startup "sh" "-c" "sleep 1 && ~/.config/niri/scripts/launch_to_ws.sh zen-browser zen bw"
 // spawn-at-startup "sh" "-c" "sleep 2 && ~/.config/niri/scripts/launch_to_ws.sh Telegram org.telegram.desktop tg"

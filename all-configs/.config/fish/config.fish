@@ -98,3 +98,7 @@ end
 
 # Created by `pipx` on 2026-02-28 06:47:13
 set PATH $PATH /home/kukaracka/.local/bin
+set -gx PYENV_ROOT $HOME/.pyenv
+set -gx PATH $PYENV_ROOT/bin $PATH
+pyenv init --path | source
+pyenv init - | source

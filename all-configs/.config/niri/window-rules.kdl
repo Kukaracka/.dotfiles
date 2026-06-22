@@ -1,8 +1,29 @@
+blur {
+  passes 2        // more passes = stronger blur (default: 3)
+  offset 3.0      // sample distance per pass (default: 3.0)
+  noise 0.03      // grain overlay (default: 0.02)
+  saturation 1.0  // color saturation boost (default: 1.5)
+}
+
+window-rule {
+  background-effect {
+    blur true
+    xray false
+  }
+}
+
+layer-rule {
+  match namespace="^noctalia-(background|launcher-overlay|dock)-.*$"
+  background-effect {
+    xray false
+  }
+}
+
 // =========================
 // GLOBAL / GENERIC RULES
 // =========================
 window-rule {
-    geometry-corner-radius 0
+    geometry-corner-radius 15
     clip-to-geometry true
 }
 
@@ -26,6 +47,7 @@ window-rule {
     match app-id=r#"^zen$"#
     default-column-width { proportion 1.0; }
     open-on-workspace "bw"
+    // open-maximized true
 }
 
 
@@ -35,9 +57,14 @@ window-rule {
 // =========================
 window-rule {
     match app-id=r#"^kitty$"#
-
-    default-column-width { proportion 1.0; }
+    background-effect {
+        blur true     // ОБЯЗАТЕЛЬНО добавляем true
+        xray true     // Размывать только обои (false — размывать другие окна под ним)
+    }
+      
+    default-column-width { proportion 0.66667; }
     scroll-factor 4
+    open-maximized true
 }
 
 window-rule {
@@ -62,6 +89,12 @@ window-rule {
     // scroll-factor 2.5
 }
 
+window-rule {
+    match app-id=r#"^chrome-mail.mail.ru__-Default$"#
+    open-on-workspace "tg"
+    default-column-width { proportion 0.66667; }
+    // scroll-factor 2.5
+}
 
 
 // =========================
@@ -70,7 +103,7 @@ window-rule {
 window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
-
+    default-column-width { proportion 0.5; }
     open-on-workspace "sc"
     block-out-from "screen-capture"
 }
@@ -80,11 +113,21 @@ window-rule {
 
     open-on-workspace "sc"
     scroll-factor 2.5
-    default-column-width {}
+    default-column-width { proportion 0.5; }
 }
 
 
+window-rule {
+    match app-id=r#"^org.gnome.Nautilus$"#
+    scroll-factor 2.5
+    default-column-width { proportion 0.66667; }
+}
 
+window-rule {
+    match app-id=r#"^ONLYOFFICE$"#
+    scroll-factor 2.5
+    default-column-width { proportion 0.66667; }
+}
 // =========================
 // GAMES / VM
 // =========================

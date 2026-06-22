@@ -75,7 +75,7 @@ rules = [
 	# Empty file
 	{ mime = "inode/empty", use = [ "edit", "reveal" , "copy"] },
 	# Virtual file system
-	{ mime = "vfs/{absent,stale}", use = "download", "copy" },
+	# { mime = "vfs/{absent,stale}", use = "download", "copy" },
 	# Fallback
 	{ url = "*", use = [ "open", "reveal", "copy" ] },
   { url = "*.mkv", use = [ "play","play_alt",  "edit" ] },
