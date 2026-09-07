@@ -1,30 +1,39 @@
 return {
-  "saghen/blink.cmp",
-  -- Make blink.cmp toogleable
-  opts = function(_, opts)
-    vim.b.completion = true
+  {
+    "saghen/blink.cmp",
+    optional = true,
+    opts = function(_, opts)
+      -- Отключаем dot_repeat для text_edits
+      opts.text_edits = opts.text_edits or {}
+      opts.text_edits.dot_repeat = false
 
-    opts.preset = "default"
+      -- Остальное без изменений
+      opts.completion = opts.completion or {}
+      opts.completion.list = opts.completion.list or {}
+      opts.completion.list.selection = {
+        preselect = false,
+      }
 
-    Snacks.toggle({
-      name = "Completion",
-      get = function()
-        return vim.b.completion
-      end,
-      set = function(state)
-        vim.b.completion = state
-      end,
-    }):map("<leader>uk")
+      vim.b.completion = true
+      opts.preset = "default"
 
-    opts.enabled = function()
-      -- Отключаем, если:
-      -- 1. Переключатель выключен (ваша логика)
-      -- 2. Тип буфера "prompt" (поля ввода поиска)
-      -- 3. Это обычная командная строка (нажатие ":")
-      return vim.b.completion ~= false
-        and not vim.tbl_contains({ "prompt" }, vim.bo.buftype)
-        and vim.api.nvim_get_mode().mode ~= "c"
-    end
-    return opts
-  end,
+      Snacks.toggle({
+        name = "Completion",
+        get = function()
+          return vim.b.completion
+        end,
+        set = function(state)
+          vim.b.completion = state
+        end,
+      }):map("<leader>uk")
+
+      opts.enabled = function()
+        return vim.b.completion ~= false
+          and not vim.tbl_contains({ "prompt" }, vim.bo.buftype)
+          and vim.api.nvim_get_mode().mode ~= "c"
+      end
+
+      return opts
+    end,
+  },
 }

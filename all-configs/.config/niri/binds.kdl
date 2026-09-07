@@ -24,24 +24,12 @@ binds {
     // =========================
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
 
-    // Mod+T hotkey-overlay-title="Run an Application: rofi" {
-    //     spawn-sh "$HOME/.config/niri/scripts/toggle_rofi.sh"
-    // }
-
     Mod+Z hotkey-overlay-title="Run an Application: noctalia-shell" {
-        spawn-sh "qs -c noctalia-shell ipc call launcher toggle"
+        spawn-sh "noctalia msg panel-toggle launcher"
     }
 
-    Mod+T hotkey-overlay-title="Run an Application: noctalia-shell" {
-        spawn-sh "qs -c noctalia-shell ipc call launcher toggle"
-    }
-
-    Mod+Alt+S hotkey-overlay-title="Run noctalia settings" {
-        spawn-sh "qs -c noctalia-shell ipc call settings toggle";
-    }
-
-    Mod+Alt+M hotkey-overlay-title="Run noctalia session Menu" {
-        spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle";
+    Mod+M hotkey-overlay-title="Run noctalia session Menu" {
+        spawn-sh "noctalia msg panel-toggle session";
     }
 
     Mod+Alt+Down hotkey-overlay-title="Openrgb white light" {
@@ -59,12 +47,12 @@ binds {
     // Mod+Alt+B {
     //     spawn "sh" "-c" "cliphist list | rofi -dmenu -theme $HOME/.config/rofi/launchers/type-2/style-2_clip.rasi | cliphist decode | wl-copy";
     // }
-    Mod+Alt+B {
-        spawn-sh "qs -c noctalia-shell ipc call plugin:clipboard toggle";
+    Mod+B {
+        spawn-sh "noctalia msg panel-toggle clipboard";
     }
 
     Mod+Alt+E {
-        spawn-sh "rofi -show emoji -theme $HOME/.config/rofi/launchers/type-2/style-2_clip.rasi";
+        spawn-sh "smile";
     }
 
     // Super+Alt+S allow-when-locked=true hotkey-overlay-title=null {
@@ -78,8 +66,8 @@ binds {
     XF86AudioRaiseVolume { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
     XF86AudioLowerVolume { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
     XF86AudioMute { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
-    XF86MonBrightnessUp { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "increase"; }
-    XF86MonBrightnessDown { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
+    XF86MonBrightnessUp { spawn-sh "ddcutil --next setvcp 10 + 10" ; }
+    XF86MonBrightnessDown { spawn-sh "ddcutil --next setvcp 10 - 10" ; }
 
     XF86AudioPlay allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioStop allow-when-locked=true { spawn-sh "playerctl stop"; }
@@ -105,7 +93,7 @@ binds {
     // Принудительное закрытие (SIGKILL) текущего окна
     Mod+Alt+Q { spawn "sh" "-c" "niri msg focused-window | grep 'ID:' | awk '{print $2}' | xargs kill -9"; }
 
-    Mod+B       { toggle-window-floating; }
+    Mod+Alt+B       { toggle-window-floating; }
     Mod+Shift+B { switch-focus-between-floating-and-tiling; }
 
     Mod+BracketLeft  { consume-or-expel-window-left; }
@@ -121,7 +109,7 @@ binds {
     Mod+A { switch-preset-column-width; }
     Mod+G { maximize-column; }
     Mod+Alt+G { fullscreen-window; }
-    Mod+Alt+C { center-column; }
+    Mod+T { center-column; }
 
     Mod+Minus { set-column-width "-10%"; }
     Mod+Equal { set-column-width "+10%"; }
@@ -150,23 +138,23 @@ binds {
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
 
-    Mod+Ctrl+Home { move-column-to-first; }
-    Mod+Ctrl+End  { move-column-to-last; }
+    // Mod+Ctrl+Home { move-column-to-first; }
+    // Mod+Ctrl+End  { move-column-to-last; }
 
 
     // =========================
     // NAVIGATION (MONITORS)
     // =========================
-    Mod+Shift+J { focus-monitor-left; }
+    Mod+U { focus-monitor-left; }
     Mod+Shift+K { focus-monitor-down; }
     Mod+Shift+I { focus-monitor-up; }
-    Mod+Shift+L { focus-monitor-right; }
+    Mod+O { focus-monitor-right; }
 
-    Mod+Shift+Ctrl+J { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+L { move-column-to-monitor-right; }
+    Mod+Ctrl+U { move-column-to-monitor-left; }
+    Mod+Ctrl+O { move-column-to-monitor-right; }
 
-    Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
-    Mod+Shift+Ctrl+Right { move-workspace-to-monitor-right; }
+    Mod+Ctrl+Home  { move-workspace-to-monitor-left; }
+    Mod+Ctrl+End { move-workspace-to-monitor-right; }
 
 
     // =========================
@@ -178,8 +166,8 @@ binds {
     Mod+Ctrl+K { move-column-to-workspace-down; }
     Mod+Ctrl+I { move-column-to-workspace-up; }
 
-    Mod+Shift+Down { move-workspace-down; }
-    Mod+Shift+Up   { move-workspace-up; }
+    Mod+Ctrl+Page_Down { move-workspace-down; }
+    Mod+Ctrl+Page_Up   { move-workspace-up; }
 
     // direct access
     Mod+X { focus-workspace 1; }

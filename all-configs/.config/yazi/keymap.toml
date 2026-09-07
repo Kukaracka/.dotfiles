@@ -1,29 +1,14 @@
 #----------CONFIGS-----------------
 
-# [[mgr.prepend_keymap]]
-# on = [ "g", "c", "y" ]
-# run = "cd ~/.config/yazi"
-# desc = "cd ~/.config/yazi"
-#
-# [[mgr.prepend_keymap]]
-# on = [ "g", "c", "h" ]
-# run = "cd ~/.config/hypr"
-# desc = "cd ~/.config/hypr"
-#
-# [[mgr.prepend_keymap]]
-# on = [ "g", "c", "f"]
-# run = "cd ~/.config/fish"
-# desc = "cd ~/.config/fish"
-#
-# [[mgr.prepend_keymap]]
-# on = [ "g", "c", "k"]
-# run = "cd /etc/keyd"
-# desc = "cd /etc/keyd"
-
 [[mgr.prepend_keymap]]
 on = [ "g", "p"]
 run = "cd ~/Projects"
 desc = "Go to project directory"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "r"]
+run = "cd ~/Releases"
+desc = "Go to releases directory"
 
 [[mgr.prepend_keymap]]
 on = [ "g", "m"]
@@ -38,42 +23,43 @@ desc = "Go to dotfiles directory"
 #-----------DIRECTORIES-------------
 
 [[mgr.prepend_keymap]]
-on = [ "g", "w" ]
+on = [ "g", "h", "w" ]
 run = "cd ~/Downloads"
 desc = "cd ~/Downloads"
 
 [[mgr.prepend_keymap]]
-on = [ "g", "d", "d" ]
+on = [ "g", "h", "d" ]
 run = "cd ~/Documents"
 desc = "cd ~/Documents"
 
 [[mgr.prepend_keymap]]
-on = [ "g", "r" ]
-run = "cd ~/Pictures"
-desc = "cd ~/Pictures"
-
-[[mgr.prepend_keymap]]
-on = [ "g", "v" ]
+on = [ "g", "h", "v" ]
 run = "cd ~/Videos"
 desc = "cd ~/Videos"
 
 [[mgr.prepend_keymap]]
-on = [ "g", "d", "c" ]
+on = [ "g", "h", "c" ]
 run = "cd ~/.config"
 desc = "cd ~/.config"
 
 [[mgr.prepend_keymap]]
-on = [ "g", "t" ]
-run = "cd ~/Torrents/"
-desc = "cd ~/Torrents/"
-
-[[mgr.prepend_keymap]]
-on = [ "g", "d", "t"]
+on = [ "g", "h", "t"]
 run = "cd ~/.local/share/Trash/files"
 desc = "cd ~/.local/share/Trash/file"
 
 #-------------Plugins-------------
+#
 [[mgr.prepend_keymap]]
 on = ["C"]
 run = "plugin ouch"
 desc = "Compress with ouch"
+
+[[mgr.prepend_keymap]]
+on   = ["D"]
+run  = "shell 'ouch d \"$@\"' --confirm"
+desc = "Decompress with ouch"
+
+[[mgr.prepend_keymap]]
+on   = [ "c", "d" ]
+run  = 'exec /usr/bin/ripdrag --no-click --and-exit --icon-size 64 --target --all "$@"'
+desc = "Drag out files"

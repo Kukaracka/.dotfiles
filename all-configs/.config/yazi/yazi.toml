@@ -18,6 +18,12 @@ cache_dir       = ""
 mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}"
 run  = "ouch"
  
+[shell]
+path = "/usr/bin/fish"
+env = [
+    { key = "PATH", value = "/usr/local/bin:/usr/bin:/bin" }
+]
+
 # [plugin]
 # prepend_previewers = [
 # 	# Change the top-level archive icon
@@ -68,7 +74,7 @@ rules = [
 	# Media
 	{ mime = "{audio,video}/*", use = [ "play", "play_alt", "reveal" , "copy"] },
 	# Archive
-	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract", "reveal" ] },
+	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract" ] },
 	# JSON
 	{ mime = "application/{json,ndjson}", use = [ "edit", "reveal" , "copy"] },
 	{ mime = "*/javascript", use = [ "edit", "reveal" , "copy"] },

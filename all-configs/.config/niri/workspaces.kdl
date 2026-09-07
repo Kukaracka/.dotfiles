@@ -1,20 +1,20 @@
 workspace "tr" {
-    open-on-output "eDP-1"
+    open-on-output "HDMI-A-2"
 }
 
 workspace "bw" {
-    open-on-output "HDMI-A-1"
+    open-on-output "HDMI-A-3"
 }
 
 workspace "tg" {
-    open-on-output "eDP-1"
+    open-on-output "HDMI-A-3"
 }
 
 workspace "sc" {
-    open-on-output "eDP-1"
+    open-on-output "HDMI-A-2"
 }
 
 workspace "etc" {
-    open-on-output "eDP-1"
+    open-on-output "HDMI-A-2"
 }
 

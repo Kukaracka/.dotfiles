@@ -1,6 +1,6 @@
 /// Бар сверху монитора
 // spawn-at-startup "waybar"
-spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "noctalia"
 
 /// Запуск утилиты, отвечающей за историю буфера обмена
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
@@ -14,7 +14,7 @@ spawn-at-startup "autossh" "-M" "0" "-f" "-N" "-o" "ServerAliveInterval 30" "-o"
 
 /// Запуск syncthing
 spawn-at-startup "syncthing" "--no-browser"
-spawn-at-startup "tg-ws-proxy" 
+spawn-at-startup "udiskie"
 
 /// Запуск демона локскрина
 // spawn-at-startup "hypridle"
@@ -29,8 +29,11 @@ spawn-at-startup "sh" "-c" "~/.config/niri/scripts/launch_to_ws.sh kitty kitty t
 
 spawn-at-startup "keepassxc"
 spawn-at-startup "Telegram"
-spawn-at-startup "throne"
+// spawn-at-startup "throne"
 spawn-at-startup "zen-browser"
+spawn-at-startup "pomotroid"
+spawn-at-startup "obsidian"
+// spawn-at-startup "mattermost-desktop"
 // spawn-at-startup "chromium" "--app=https://mail.mail.ru/"
 
 // spawn-at-startup "sh" "-c" "sleep 1 && ~/.config/niri/scripts/launch_to_ws.sh zen-browser zen bw"

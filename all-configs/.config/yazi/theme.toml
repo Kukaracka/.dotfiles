@@ -157,5 +157,5 @@ rules = [
 # : }}}
 
 [flavor]
-dark  = "noctalia"
+dark = "noctalia"
 light = "noctalia"

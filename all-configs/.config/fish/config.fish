@@ -38,6 +38,7 @@ if status is-interactive
     abbr -a wf 'impala'
     abbr -a lzd 'lazydocker'
     abbr -a lzg 'lazygit'
+    abbr -a y "yazi"
 
 
     abbr -a venv 'source .venv/bin/activate.fish'
@@ -70,35 +71,39 @@ if status is-interactive
 
     abbr -a sse 'sudo systemctl enable'
     abbr -a ssd 'sudo systemctl disable'
-    # Copy 
 
+    # Copy 
     abbr -a copy "wl-copy <"
 
     # Системные команды
     abbr -a sdn 'shutdown now'
 
+    # Ouch
+    abbr -a od 'ouch d'
+    abbr -a oc 'ouch c'
 end
 
 
-function y
-    set tmp (mktemp -t "yazi-cwd.XXXXXX")
-    yazi $argv --cwd-file="$tmp"
-    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-        builtin cd -- "$cwd"
-    end
-    rm -f -- "$tmp"
-end
+# function y
+#     set tmp (mktemp -t "yazi-cwd.XXXXXX")
+#     yazi $argv --cwd-file="$tmp"
+#     if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+#         builtin cd -- "$cwd"
+#     end
+#     rm -f -- "$tmp"
+# end
+set -gx EDITOR "nvim"
 # --- Завершающие украшения (при старте терминала) ---
 # pokemon-colorscripts --no-title -s -r | fastfetch -c $HOME/.config/fastfetch/config-pokemon.jsonc --logo-type file-raw --logo-height 10 --logo-width 5 --logo -
-if status is-interactive
-and not set -q TMUX
-    # Пытаемся подключиться к сессии с именем "main", если её нет — создаем
-    exec tmux new-session -A -s main
-end
+# if status is-interactive
+# and not set -q TMUX
+#     # Пытаемся подключиться к сессии с именем "main", если её нет — создаем
+#     exec tmux new-session -A -s main
+# end
 
 # Created by `pipx` on 2026-02-28 06:47:13
-set PATH $PATH /home/kukaracka/.local/bin
-set -gx PYENV_ROOT $HOME/.pyenv
-set -gx PATH $PYENV_ROOT/bin $PATH
-pyenv init --path | source
-pyenv init - | source
+# set PATH $PATH /home/kukaracka/.local/bin
+# set -gx PYENV_ROOT $HOME/.pyenv
+# set -gx PATH $PYENV_ROOT/bin $PATH
+# pyenv init --path | source
+# pyenv init - | source

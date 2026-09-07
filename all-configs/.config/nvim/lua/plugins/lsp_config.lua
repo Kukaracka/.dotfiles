@@ -1,4 +1,9 @@
 return {
   "neovim/nvim-lspconfig",
-  opts = { autoformat = false },
+  opts = {
+    autoformat = false,
+    servers = {
+      basedpyright = { enabled = false },
+    },
+  },
 }

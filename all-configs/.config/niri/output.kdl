@@ -1,71 +1,32 @@
-// =========================
-// INTERNAL DISPLAY (LAPTOP)
-// =========================
 output "eDP-1" {
 
-    // =========================
-    // STATE
-    // =========================
-    // off
-
-
-    // =========================
-    // MODE (RESOLUTION / REFRESH)
-    // =========================
     mode custom=true "1920x1200@90"
-
-
-    // =========================
-    // SCALE
-    // =========================
     scale 1.25
-
-
-    // =========================
-    // TRANSFORM (ROTATION)
-    // =========================
     transform "normal"
-
-
-    // =========================
-    // POSITION (GLOBAL SPACE)
-    // =========================
     position x=0 y=0
 }
 
 
 
-// =========================
-// EXTERNAL DISPLAY
-// =========================
-output "HDMI-A-1" {
+// output "HDMI-A-1" {
+//
+//     // mode custom=true "1920x1080@50"
+//     scale 1.25
+//     transform "normal"
+// }
 
-    // =========================
-    // STATE
-    // =========================
-    // off
+output "HDMI-A-2" {
 
-
-    // =========================
-    // MODE (RESOLUTION / REFRESH)
-    // =========================
     mode custom=true "1920x1080@60"
-
-
-    // =========================
-    // SCALE
-    // =========================
-    scale 1.25
-
-
-    // =========================
-    // TRANSFORM (ROTATION)
-    // =========================
+    // mode custom=true "2560x1440@50"
     transform "normal"
+    // scale 1.25
+}
 
+output "HDMI-A-3" {
 
-    // =========================
-    // POSITION (GLOBAL SPACE)
-    // =========================
-    // position x=1280 y=0
+    mode custom=true "1920x1080@60"
+    // mode custom=true "2560x1440@50"
+    transform "normal"
+    // scale 1.25
 }

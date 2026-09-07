@@ -45,11 +45,17 @@ window-rule {
 // =========================
 window-rule {
     match app-id=r#"^zen$"#
-    default-column-width { proportion 1.0; }
+    default-column-width { proportion 1.00; }
     open-on-workspace "bw"
     // open-maximized true
 }
 
+window-rule {
+    match app-id=r#"^obsidian$"#
+    default-column-width { proportion 0.66; }
+    open-on-workspace "tr"
+    // open-maximized true
+}
 
 
 // =========================
@@ -64,38 +70,40 @@ window-rule {
       
     default-column-width { proportion 0.66667; }
     scroll-factor 4
-    open-maximized true
+    // open-maximized true
 }
+
 
 window-rule {
-    match app-id=r#"Alacritty"#
-
+    match app-id=r#"^it.mijorus.smile$"#
+    background-effect {
+        blur true
+        xray true
+    }
+      
+    default-column-width { proportion 0.66667; }
+    scroll-factor 4
     open-floating true
-
-    default-column-width { fixed 300; }
-    default-window-height { fixed 180; }
-    default-floating-position x=1220 y=15
 }
-
-
 
 // =========================
 // WORKSPACE: TELEGRAM (tg)
 // =========================
 window-rule {
-    match app-id=r#"^org.telegram.desktop$"#
+    match app-id=r#"^Mattermost.Desktop$"#
     open-on-workspace "tg"
-    default-column-width { proportion 1.0; }
+    // default-column-width { proportion 0.5; }
+    default-column-width { proportion 0.75; }
     // scroll-factor 2.5
 }
 
 window-rule {
-    match app-id=r#"^chrome-mail.mail.ru__-Default$"#
+    match app-id=r#"^org.telegram.desktop$"#
     open-on-workspace "tg"
-    default-column-width { proportion 0.66667; }
+    // default-column-width { proportion 0.5; }
+    default-column-width { proportion 0.75; }
     // scroll-factor 2.5
 }
-
 
 // =========================
 // WORKSPACE: SECRETS / SECURITY (sc)
@@ -110,6 +118,7 @@ window-rule {
 
 window-rule {
     match app-id=r#"^Throne$"#
+    match app-id=r#"^pomotroid$"#
 
     open-on-workspace "sc"
     scroll-factor 2.5
