@@ -32,6 +32,18 @@ binds {
         spawn-sh "noctalia msg panel-toggle session";
     }
 
+    Mod+Y hotkey-overlay-title="Run noctalia session Menu" {
+        spawn-sh "noctalia msg panel-toggle wallpaper";
+    }
+
+    Mod+N hotkey-overlay-title="Run noctalia session Menu" {
+        spawn-sh "noctalia msg panel-toggle control-center";
+    }
+
+    Mod+Alt+S hotkey-overlay-title="Run noctalia session Menu" {
+        spawn-sh "noctalia msg settings-open";
+    }
+
     Mod+Alt+Down hotkey-overlay-title="Openrgb white light" {
         spawn-sh "openrgb --gui --startminimized --server --profile white.orp";
     }
@@ -132,8 +144,8 @@ binds {
     Mod+J { focus-column-left; }
     Mod+L { focus-column-right; }
 
-    Mod+Ctrl+J { move-column-left; }
-    Mod+Ctrl+L { move-column-right; }
+    Mod+Ctrl+J { consume-or-expel-window-left; }
+    Mod+Ctrl+L { consume-or-expel-window-right; }
 
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
@@ -160,8 +172,8 @@ binds {
     // =========================
     // WORKSPACES
     // =========================
-    Mod+K { focus-workspace-down; }
-    Mod+I { focus-workspace-up; }
+    Mod+K { focus-window-down; }
+    Mod+I { focus-window-up; }
 
     Mod+Ctrl+K { move-column-to-workspace-down; }
     Mod+Ctrl+I { move-column-to-workspace-up; }

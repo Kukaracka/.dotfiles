@@ -68,7 +68,8 @@ window-rule {
         xray true     // Размывать только обои (false — размывать другие окна под ним)
     }
       
-    default-column-width { proportion 0.66667; }
+    // default-column-width { proportion 0.66667; }
+    default-column-width { proportion 0.5; }
     scroll-factor 4
     // open-maximized true
 }
@@ -93,7 +94,7 @@ window-rule {
     match app-id=r#"^Mattermost.Desktop$"#
     open-on-workspace "tg"
     // default-column-width { proportion 0.5; }
-    default-column-width { proportion 0.75; }
+    default-column-width { proportion 0.666667; }
     // scroll-factor 2.5
 }
 
@@ -101,7 +102,7 @@ window-rule {
     match app-id=r#"^org.telegram.desktop$"#
     open-on-workspace "tg"
     // default-column-width { proportion 0.5; }
-    default-column-width { proportion 0.75; }
+    default-column-width { proportion 0.3333334; }
     // scroll-factor 2.5
 }
 

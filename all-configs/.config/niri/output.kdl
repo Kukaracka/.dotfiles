@@ -19,14 +19,14 @@ output "HDMI-A-2" {
 
     mode custom=true "1920x1080@60"
     // mode custom=true "2560x1440@50"
-    transform "normal"
+    // transform "normal"
     // scale 1.25
 }
 
 output "HDMI-A-3" {
 
-    mode custom=true "1920x1080@60"
+    // mode custom=true "1920x1080@60"
     // mode custom=true "2560x1440@50"
-    transform "normal"
+    // transform "normal"
     // scale 1.25
 }

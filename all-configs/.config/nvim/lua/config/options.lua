@@ -14,7 +14,6 @@ vim.opt.laststatus = 0
 
 vim.g.lazyvim_picker = "snacks"
 
-
 vim.opt.keymap = "russian-jcukenwin"
 vim.opt.iminsert = 0
 vim.opt.imsearch = 0
@@ -23,3 +22,5 @@ vim.opt.textwidth = 0
 vim.opt.colorcolumn = "80"
 vim.opt.wrap = false
 vim.opt.linebreak = false
+
+vim.g.lazygit_config_file_path = vim.fn.expand("~/.config/lazygit/config.yml")
