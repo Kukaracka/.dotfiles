@@ -23,7 +23,7 @@ if status is-interactive
     zoxide init fish | source
     # --- Алиасы: переопределения и обёртки ---
     alias clear "printf '\033[2J\033[3J\033[1;1H'"  # Полная очистка экрана
-    alias grep='rg'          # ripgrep вместо grep
+    # alias grep='rg'          # ripgrep вместо grep
     alias ls='lsd'           # lsd вместо ls
     # alias pacman='sudo pacman'  # безопаснее: всегда с sudo
     alias q='qs -c ii'       # твоя кастомная команда
@@ -38,7 +38,7 @@ if status is-interactive
     abbr -a wf 'impala'
     abbr -a lzd 'lazydocker'
     abbr -a lzg 'lazygit'
-    abbr -a y "yazi"
+    # abbr -a y "yazi"
 
 
     abbr -a venv 'source .venv/bin/activate.fish'
@@ -84,14 +84,15 @@ if status is-interactive
 end
 
 
-# function y
-#     set tmp (mktemp -t "yazi-cwd.XXXXXX")
-#     yazi $argv --cwd-file="$tmp"
-#     if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-#         builtin cd -- "$cwd"
-#     end
-#     rm -f -- "$tmp"
-# end
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
+end
+
 set -gx EDITOR "nvim"
 # --- Завершающие украшения (при старте терминала) ---
 # pokemon-colorscripts --no-title -s -r | fastfetch -c $HOME/.config/fastfetch/config-pokemon.jsonc --logo-type file-raw --logo-height 10 --logo-width 5 --logo -

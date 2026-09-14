@@ -98,3 +98,9 @@ layout {
     // prefer-no-csd
     // draw-border-with-background
 }
+
+gestures {
+    hot-corners {
+        off
+    }
+}

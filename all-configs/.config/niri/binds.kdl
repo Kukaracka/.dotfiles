@@ -52,6 +52,9 @@ binds {
         spawn "hyprlock";
     }
 
+    Mod+Alt+C hotkey-overlay-title="Run noctalia session Menu" {
+        spawn-sh "noctalia msg settings-open";
+    }
 
     // =========================
     // CLIPBOARD / UTILITIES
@@ -75,16 +78,17 @@ binds {
     // =========================
     // AUDIO / MEDIA
     // =========================
-    XF86AudioRaiseVolume { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
-    XF86AudioLowerVolume { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
-    XF86AudioMute { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
+    XF86AudioRaiseVolume { spawn-sh "noctalia msg volume-up"; }
+    XF86AudioLowerVolume { spawn-sh "noctalia msg volume-down"; }
+    XF86AudioMute { spawn-sh "noctalia msg volume-mute"; }
     XF86MonBrightnessUp { spawn-sh "ddcutil --next setvcp 10 + 10" ; }
     XF86MonBrightnessDown { spawn-sh "ddcutil --next setvcp 10 - 10" ; }
 
-    XF86AudioPlay allow-when-locked=true { spawn-sh "playerctl play-pause"; }
-    XF86AudioStop allow-when-locked=true { spawn-sh "playerctl stop"; }
-    XF86AudioPrev allow-when-locked=true { spawn-sh "playerctl previous"; }
-    XF86AudioNext allow-when-locked=true { spawn-sh "playerctl next"; }
+    // XF86AudioPlay allow-when-locked=true { spawn-sh "noctalia msg media toggle"; }
+    XF86AudioPlay allow-when-locked=true { spawn-sh "noctalia msg media toggle"; }
+    // XF86AudioStop allow-when-locked=true { spawn-sh "noctalia msg media toggle"; }
+    XF86AudioPrev allow-when-locked=true { spawn-sh "noctalia msg media previous"; }
+    XF86AudioNext allow-when-locked=true { spawn-sh "noctalia msg media next"; }
 
 
     // =========================
@@ -121,7 +125,9 @@ binds {
     Mod+A { switch-preset-column-width; }
     Mod+G { maximize-column; }
     Mod+Alt+G { fullscreen-window; }
-    Mod+T { center-column; }
+    Mod+T { spawn "sh" "-c" "noctalia msg bar-toggle"; }
+
+    Mod+Alt+T { center-column; }
 
     Mod+Minus { set-column-width "-10%"; }
     Mod+Equal { set-column-width "+10%"; }
@@ -135,7 +141,7 @@ binds {
     // =========================
     // OVERVIEW
     // =========================
-    Mod+Alt+Semicolon repeat=false { toggle-overview; }
+    Mod+Semicolon repeat=false { toggle-overview; }
 
 
     // =========================

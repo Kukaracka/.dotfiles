@@ -2,25 +2,25 @@ gui:
   # Включает иконки (нужен шрифт Nerd Font, например JetBrainsMono Nerd Font)
   theme:
     activeBorderColor:
-      - "#8b9ac1"
+      - "#889fc4"
       - bold
     inactiveBorderColor:
-      - "#8c81b1"
+      - "#7f77bb"
     searchingActiveBorderColor:
-      - "#a283af"
+      - "#a177bb"
       - bold
     optionsTextColor:
-      - "#afb1b6"
+      - "#afb2b6"
     selectedLineBgColor:
-      - "#262a36"
+      - "#262c36"
     inactiveViewSelectedLineBgColor:
       - bold
     cherryPickedCommitFgColor:
-      - "#afb1b6"
+      - "#afb2b6"
     cherryPickedCommitBgColor:
-      - "#a283af"
+      - "#a177bb"
     markedBaseCommitFgColor:
-      - "#a283af"
+      - "#a177bb"
     markedBaseCommitBgColor:
       - "#fd4663"
     unstagedChangesColor:

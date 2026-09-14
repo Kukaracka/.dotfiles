@@ -18,12 +18,6 @@ cache_dir       = ""
 mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}"
 run  = "ouch"
  
-[shell]
-path = "/usr/bin/fish"
-env = [
-    { key = "PATH", value = "/usr/local/bin:/usr/bin:/bin" }
-]
-
 # [plugin]
 # prepend_previewers = [
 # 	# Change the top-level archive icon
@@ -43,30 +37,39 @@ env = [
 
 
 [opener]
-# Чем открывать файлы (настрой под свой софт)
+# Чем открывать файлы (плейсхолдеры yazi 26.x: %s = все выбранные файлы, %s1 = первый)
 edit = [
-    { run = 'nvim "$@"', block = true, desc = "NeoVim" },
+    { run = 'nvim %s', block = true, desc = "NeoVim" },
 ]
 play_alt = [
-    { run = 'mpv "$@"', orphan = true, desc = "MPV" },
+    { run = 'mpv %s', orphan = true, desc = "MPV" },
 ]
 
 copy = [
-
-    { run = 'wl-copy < "$@"', orphan = true, desc = "Clipboard" },
+    { run = 'wl-copy < %s1', orphan = true, desc = "Clipboard" },
 ]
 
 play = [
-    { run = 'vlc "$@"', orphan = true, desc = "VLC" },
+    { run = 'vlc %s', orphan = true, desc = "VLC" },
 ]
 
 open_img = [
-    { run = 'gwenview "$@"', orphan = true, desc = "VLC" },
+    { run = 'gwenview %s', orphan = true, desc = "Gwenview" },
+]
+
+browser = [
+    { run = 'zen-browser %S1', orphan = true, desc = "Zen Browser" },
+]
+
+extract = [
+    { run = 'for f in %s; do ouch d -y "$f"; done', block = true, desc = "Extract here with ouch" },
 ]
 [open]
 rules = [
 	# Folder
-	{ url = "*/", use = [ "edit", "open", "reveal", "copy"] },
+	{ mime = "folder/*", use = [ "edit", "open", "reveal", "copy"] },
+	# HTML
+	{ mime = "text/html", use = [ "edit", "browser", "reveal", "copy" ] },
 	# Text
 	{ mime = "text/*", use = [ "edit", "reveal", "copy" ] },
 	# Image
@@ -74,7 +77,7 @@ rules = [
 	# Media
 	{ mime = "{audio,video}/*", use = [ "play", "play_alt", "reveal" , "copy"] },
 	# Archive
-	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract" ] },
+	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract", "reveal" ] },
 	# JSON
 	{ mime = "application/{json,ndjson}", use = [ "edit", "reveal" , "copy"] },
 	{ mime = "*/javascript", use = [ "edit", "reveal" , "copy"] },
@@ -82,7 +85,8 @@ rules = [
 	{ mime = "inode/empty", use = [ "edit", "reveal" , "copy"] },
 	# Virtual file system
 	# { mime = "vfs/{absent,stale}", use = "download", "copy" },
+	# Video by extension (must stay before the "*" fallback)
+	{ url = "*.mkv", use = [ "play","play_alt", "edit" ] },
 	# Fallback
 	{ url = "*", use = [ "open", "reveal", "copy" ] },
-  { url = "*.mkv", use = [ "play","play_alt",  "edit" ] },
 ]

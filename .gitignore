@@ -1,4 +1,7 @@
 /all-configs/.config/fish/fish_variables*
 /all-configs/.config/tmux/resurrect/*
 /all-configs/.config/tmux/resurrect/last
+*/noctalia.conf
+*/noctalia.yml
+*/noctalia.kdl
 

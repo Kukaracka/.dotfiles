@@ -56,10 +56,10 @@ desc = "Compress with ouch"
 
 [[mgr.prepend_keymap]]
 on   = ["D"]
-run  = "shell 'ouch d \"$@\"' --confirm"
+run  = "shell 'for f in %s; do ouch d -y \"$f\"; done' --confirm --block"
 desc = "Decompress with ouch"
 
 [[mgr.prepend_keymap]]
-on   = [ "c", "d" ]
-run  = 'exec /usr/bin/ripdrag --no-click --and-exit --icon-size 64 --target --all "$@"'
-desc = "Drag out files"
+on = [ "c", "d" ]
+run = "shell --confirm 'GTK_THEME=Adwaita:dark ripdrag --all -xInb -W 500 %s'"
+desc = "Ripdrag selected files"
